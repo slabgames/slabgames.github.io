@@ -97,17 +97,34 @@
 	<script>
 
     (function() {
-  //   	var ratio = ratio = canvas.width/320; //or whatever your stage scale is. this is for mobile here. it may be 0, depends of your project
-		// var resolution = window.devicePixelRatio;
+    	const WIDTH = x;
+		const HEIGHT = y;
 
-		// stage.scale.x = ratio; //fullscreen scale for a mobile game
-		// stage.scale.y = ratio;
+		var renderer = PIXI.autoDetectRenderer(WIDTH, HEIGHT, ...);
+		document.body.appendChild(renderer.view);
 
-		// if(debug)
-		// {
-		//     stage.scale.y = ratio/resolution;
-		//     stage.scale.x = ratio/resolution;
-		// }
+		//main container, use this to render everything.
+		var stage = new PIXI.Container();
+
+		//the container we want to resize.
+		var container1 = stage.addChild(new PIXI.Container());
+
+		//the container we don't want to resize.
+		var container2 = stage.addChild(new PIXI.Container());
+
+
+		var resize = function() {
+
+		 var ratio = Math.min(width / renderer.width, height / renderer.height);
+
+		 // just scale that one container and leave other as it was.
+		 container1.scale.x = container1.scale.y = ratio;
+
+		 renderer.resize(Math.ceil(WIDTH * ratio), Math.ceil(HEIGHT * ratio));
+
+		};
+
+		window.addEventListener("resize", resize);
         //Initialization
         var game = new gdjs.RuntimeGame(gdjs.projectData, {});
 
