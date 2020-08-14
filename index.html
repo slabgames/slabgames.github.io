@@ -108,6 +108,7 @@
         game.getRenderer().createStandardCanvas(document.body);
         setWindowSize(WIDTH, HEIGHT)
         game.getRenderer().updateRendererSize();
+        game.getRenderer().centerWindow();
 
         //Bind keyboards/mouse/touch events
         game.getRenderer().bindStandardEvents(game.getInputManager(), window, document);
