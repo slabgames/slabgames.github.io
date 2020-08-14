@@ -100,9 +100,13 @@
     	
         //Initialization
         var game = new gdjs.RuntimeGame(gdjs.projectData, {});
+        const WIDTH = 720;
+		const HEIGHT = 1280;
+
 
         //Create a renderer
         game.getRenderer().createStandardCanvas(document.body);
+        setWindowSize(WIDTH, HEIGHT)
         game.getRenderer().updateRendererSize();
 
         //Bind keyboards/mouse/touch events
