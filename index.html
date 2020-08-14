@@ -97,17 +97,17 @@
 	<script>
 
     (function() {
-    	var ratio = ratio = canvas.width/320; //or whatever your stage scale is. this is for mobile here. it may be 0, depends of your project
-		var resolution = window.devicePixelRatio;
+  //   	var ratio = ratio = canvas.width/320; //or whatever your stage scale is. this is for mobile here. it may be 0, depends of your project
+		// var resolution = window.devicePixelRatio;
 
-		stage.scale.x = ratio; //fullscreen scale for a mobile game
-		stage.scale.y = ratio;
+		// stage.scale.x = ratio; //fullscreen scale for a mobile game
+		// stage.scale.y = ratio;
 
-		if(debug)
-		{
-		    stage.scale.y = ratio/resolution;
-		    stage.scale.x = ratio/resolution;
-		}
+		// if(debug)
+		// {
+		//     stage.scale.y = ratio/resolution;
+		//     stage.scale.x = ratio/resolution;
+		// }
         //Initialization
         var game = new gdjs.RuntimeGame(gdjs.projectData, {});
 
