@@ -8,7 +8,7 @@ gdjs.projectData = {
     },
     "properties": {
         "adMobAppId": "",
-        "adaptGameResolutionAtRuntime": false,
+        "adaptGameResolutionAtRuntime": true,
         "folderProject": true,
         "linuxExecutableFilename": "",
         "macExecutableFilename": "",

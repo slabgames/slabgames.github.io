@@ -20,8 +20,12 @@
     		height: 100%;
 		}
 		div.wrap {
-			height:100%; overflow:hidden;
+			height:100%; 
+			overflow:hidden;
+			overflow-y: hidden;
+			overflow-wrap: hidden;
 			max-width: 100%;
+			position: absolute;
     	}
         #canvasArea {
             margin-left: auto;
@@ -130,7 +134,7 @@
 	            console.log("2-- window innerWidth=" + window.innerWidth + ", innerHeight=" + window.innerHeight );
 	       	 	console.log("2-- pixi canvas size = (" +game.getRenderer().getCanvas().width + "," + game.getRenderer().getCanvas().height + ")");
 	        });
-	        console.log("versi : 1.3.31")
+	        console.log("versi : 1.3.32")
 	        console.log("1-- window innerWidth=" + window.innerWidth + ", innerHeight=" + window.innerHeight );
 	       	console.log("1-- pixi canvas size = (" +game.getRenderer().getCanvas().width + "," + game.getRenderer().getCanvas().height + ")");
 	    })();
