@@ -8,7 +8,7 @@
 gdjs.RuntimeGamePixiRenderer = function(game, forceFullscreen) {
   this._game = game;
 
-  this._isFullPage = false; //Used to track if the canvas is displayed on the full page.
+  this._isFullPage = true; //Used to track if the canvas is displayed on the full page.
   this._isFullscreen = false; //Used to track if the window is displayed as fullscreen (see setFullscreen method).
   this._forceFullscreen = forceFullscreen; //If set to true, the canvas will always be displayed as fullscreen, even if _isFullscreen == false.
 
@@ -36,13 +36,9 @@ gdjs.RuntimeGamePixiRenderer.prototype.createStandardCanvas = function(
       width: this._game.getGameResolutionWidth(),
       height: this._game.getGameResolutionHeight(),
       preserveDrawingBuffer: true,
-      antialias: false
-      //resolution:1,
-      //legacy:false,
-      //forceCanvas:false
+      antialias: false,
     }
   );
-  
   parentElement.appendChild(this._pixiRenderer.view); // add the renderer view element to the DOM
   this._pixiRenderer.view.style['position'] = 'absolute';
   this._pixiRenderer.view.tabIndex = 1; //Ensure that the canvas has the focus.
@@ -144,9 +140,6 @@ gdjs.RuntimeGamePixiRenderer.prototype._resizeCanvas = function() {
   // Store the canvas size for fast access to it.
   this._canvasWidth = canvasWidth;
   this._canvasHeight = canvasHeight;
-
-  console.log("resizing canvas size = (" + canvasWidth+ "," + canvasHeight+ ")");
-  console.log("max size = (" + maxWidth + ","+ maxHeight + ")");
 };
 
 /**
@@ -198,7 +191,6 @@ gdjs.RuntimeGamePixiRenderer.prototype.setWindowSize = function(width, height) {
     var browserWindow = electron.remote.getCurrentWindow();
     if (browserWindow) {
       browserWindow.setContentSize(width, height);
-      console.log("setWindowSize = ("+width + "," + height + ")");
     }
   } else {
     console.warn("Window size can't be changed on this platform.");
@@ -494,8 +486,7 @@ gdjs.RuntimeGamePixiRenderer.prototype.isWebGLSupported = function() {
  */
 gdjs.RuntimeGamePixiRenderer.prototype.getElectron = function() {
   if (typeof require !== 'undefined') {
-    //return require('electron');
-    return null;
+    return require('electron');
   }
 
   return null;

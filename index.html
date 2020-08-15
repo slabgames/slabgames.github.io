@@ -7,34 +7,19 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
     <meta name="theme-color" content="#000000" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1.0, user-scalable=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
 	<style>
-		html, body {
-		    width: 100%; height: 100%;
-		    overflow: hidden;
-		    touch-action: none;
-		}
 		body {
 			margin: 0;
 			padding: 0;
 			background-color: #000000;
-            /*overflow: hidden;
-            max-width: 100%;
-    		height: 100%;*/
-    		position: relative;
+            overflow: hidden;
 		}
-		/*div.wrap {
-			height:100%; 
-			overflow:hidden;
-			max-width: 100%;
-    	}*/
         #canvasArea {
             margin-left: auto;
             margin-right: auto;
             overflow: hidden;
-            max-width: 100%;
-    		height: 100%;
         }
 
         
@@ -72,7 +57,7 @@
 	<script src="events-tools\stringtools.js" crossorigin="anonymous"></script>
 	<script src="events-tools\windowtools.js" crossorigin="anonymous"></script>
 	<script src="events-tools\networktools.js" crossorigin="anonymous"></script>
-	<script src="pixi-renderers\pixi.min.js" crossorigin="anonymous"></script>
+	<script src="pixi-renderers\pixi.js" crossorigin="anonymous"></script>
 	<script src="pixi-renderers\pixi-filters-tools.js" crossorigin="anonymous"></script>
 	<script src="pixi-renderers\runtimegame-pixi-renderer.js" crossorigin="anonymous"></script>
 	<script src="pixi-renderers\runtimescene-pixi-renderer.js" crossorigin="anonymous"></script>
@@ -108,47 +93,25 @@
 </head>
 <body>
 
-    <div class=wrap>
-		<script>
+    
+	<script>
 
-	    (function() {
-	  //   	window.addEventListener("scroll", preventMotion, false);
-			// window.addEventListener("touchmove", preventMotion, false);
+    (function() {
+        //Initialization
+        var game = new gdjs.RuntimeGame(gdjs.projectData, {});
 
-			// function preventMotion(event)
-			// {
-			//     window.scrollTo(0, 0);
-			//     event.preventDefault();
-			//     event.stopPropagation();
-			// }
-	        //Initialization
-	        var game = new gdjs.RuntimeGame(gdjs.projectData, {});
-	        //game.setGameResolutionSize(720,1280);
-	        //game.setGameResolutionResizeMode("adaptHeight");
+        //Create a renderer
+        game.getRenderer().createStandardCanvas(document.body);
 
-	        //Create a renderer
-	        game.getRenderer().createStandardCanvas(document.body);
-	        
-	        game.getRenderer().setWindowSize(720, 1280);
-	        game.getRenderer().updateRendererSize();
-	        game.getRenderer().centerWindow();
+        //Bind keyboards/mouse/touch events
+        game.getRenderer().bindStandardEvents(game.getInputManager(), window, document);
 
+        //Load all assets and start the game
+        game.loadAllAssets(function() {
+            game.startGameLoop();
+        });
+    })();
 
-	        //Bind keyboards/mouse/touch events
-	        game.getRenderer().bindStandardEvents(game.getInputManager(), window, document);
-
-	        //Load all assets and start the game
-	        game.loadAllAssets(function() {
-	            game.startGameLoop();
-	            console.log("2-- window innerWidth=" + window.innerWidth + ", innerHeight=" + window.innerHeight );
-	       	 	console.log("2-- pixi canvas size = (" +game.getRenderer().getCanvas().width + "," + game.getRenderer().getCanvas().height + ")");
-	        });
-	        console.log("versi : 1.3.38")
-	        console.log("1-- window innerWidth=" + window.innerWidth + ", innerHeight=" + window.innerHeight );
-	       	console.log("1-- pixi canvas size = (" +game.getRenderer().getCanvas().width + "," + game.getRenderer().getCanvas().height + ")");
-	    })();
-
-		</script>
-	</div>
+	</script>
 </body>
 </html>
