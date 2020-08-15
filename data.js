@@ -16,7 +16,7 @@ gdjs.projectData = {
         "packageName": "com.slabgames.kuispanjatpinang",
         "projectFile": "D:\\work\\panjatpinang\\panjat-pinang\\game.json",
         "scaleMode": "linear",
-        "sizeOnStartupMode": "adaptWidth",
+        "sizeOnStartupMode": "none",
         "useExternalSourceFiles": false,
         "version": "1.3.9.4",
         "winExecutableFilename": "",
