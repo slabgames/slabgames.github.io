@@ -35,7 +35,7 @@ gdjs.RuntimeGamePixiRenderer.prototype.createStandardCanvas = function(
     {
       width: this._game.getGameResolutionWidth(),
       height: this._game.getGameResolutionHeight(),
-      preserveDrawingBuffer: true,
+      preserveDrawingBuffer: false,
       antialias: false,
     }
   );
