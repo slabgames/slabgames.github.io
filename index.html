@@ -19,6 +19,10 @@
             max-width: 100%;
     		height: 100%;
 		}
+		div.wrap {
+			height:100%; overflow:hidden;
+			max-width: 100%;
+    	}
         #canvasArea {
             margin-left: auto;
             margin-right: auto;
@@ -26,6 +30,7 @@
             overflow-x: hidden;
             max-width: 100%;
     		height: 100%;
+    		position: absolute;
         }
 
         
@@ -99,37 +104,38 @@
 </head>
 <body>
 
-    
-	<script>
+    <div class=wrap>
+		<script>
 
-    (function() {
-        //Initialization
-        var game = new gdjs.RuntimeGame(gdjs.projectData, {"forceFullscreen":true});
-        //game.setGameResolutionSize(720,1280);
-        //game.setGameResolutionResizeMode("adaptHeight");
+	    (function() {
+	        //Initialization
+	        var game = new gdjs.RuntimeGame(gdjs.projectData, {"forceFullscreen":true});
+	        //game.setGameResolutionSize(720,1280);
+	        //game.setGameResolutionResizeMode("adaptHeight");
 
-        //Create a renderer
-        game.getRenderer().createStandardCanvas(document.body);
-        
-        game.getRenderer().setWindowSize(720, 1280);
-        game.getRenderer().updateRendererSize();
-        game.getRenderer().centerWindow();
+	        //Create a renderer
+	        game.getRenderer().createStandardCanvas(document.body);
+	        
+	        game.getRenderer().setWindowSize(720, 1280);
+	        game.getRenderer().updateRendererSize();
+	        game.getRenderer().centerWindow();
 
 
-        //Bind keyboards/mouse/touch events
-        game.getRenderer().bindStandardEvents(game.getInputManager(), window, document);
+	        //Bind keyboards/mouse/touch events
+	        game.getRenderer().bindStandardEvents(game.getInputManager(), window, document);
 
-        //Load all assets and start the game
-        game.loadAllAssets(function() {
-            game.startGameLoop();
-            console.log("2-- window innerWidth=" + window.innerWidth + ", innerHeight=" + window.innerHeight );
-       	 	console.log("2-- pixi canvas size = (" +game.getRenderer().getCanvas().width + "," + game.getRenderer().getCanvas().height + ")");
-        });
-        console.log("versi : 1.3.30")
-        console.log("1-- window innerWidth=" + window.innerWidth + ", innerHeight=" + window.innerHeight );
-       	console.log("1-- pixi canvas size = (" +game.getRenderer().getCanvas().width + "," + game.getRenderer().getCanvas().height + ")");
-    })();
+	        //Load all assets and start the game
+	        game.loadAllAssets(function() {
+	            game.startGameLoop();
+	            console.log("2-- window innerWidth=" + window.innerWidth + ", innerHeight=" + window.innerHeight );
+	       	 	console.log("2-- pixi canvas size = (" +game.getRenderer().getCanvas().width + "," + game.getRenderer().getCanvas().height + ")");
+	        });
+	        console.log("versi : 1.3.31")
+	        console.log("1-- window innerWidth=" + window.innerWidth + ", innerHeight=" + window.innerHeight );
+	       	console.log("1-- pixi canvas size = (" +game.getRenderer().getCanvas().width + "," + game.getRenderer().getCanvas().height + ")");
+	    })();
 
-	</script>
+		</script>
+	</div>
 </body>
 </html>
