@@ -57,7 +57,7 @@
 	<script src="events-tools\stringtools.js" crossorigin="anonymous"></script>
 	<script src="events-tools\windowtools.js" crossorigin="anonymous"></script>
 	<script src="events-tools\networktools.js" crossorigin="anonymous"></script>
-	<script src="pixi-renderers\pixi-legacy.min.js" crossorigin="anonymous"></script>
+	<script src="pixi-renderers\pixi.js" crossorigin="anonymous"></script>
 	<script src="pixi-renderers\pixi-filters-tools.js" crossorigin="anonymous"></script>
 	<script src="pixi-renderers\runtimegame-pixi-renderer.js" crossorigin="anonymous"></script>
 	<script src="pixi-renderers\runtimescene-pixi-renderer.js" crossorigin="anonymous"></script>
@@ -97,16 +97,11 @@
 	<script>
 
     (function() {
-    	const WIDTH = 720;
-    	const HEIGHT = 1280;
         //Initialization
         var game = new gdjs.RuntimeGame(gdjs.projectData, {});
 
         //Create a renderer
         game.getRenderer().createStandardCanvas(document.body);
-        game.getRenderer().setWindowSize(WIDTH, HEIGHT);
-        //game.getRenderer().updateRendererSize();
-        //game.getRenderer().centerWindow();
 
         //Bind keyboards/mouse/touch events
         game.getRenderer().bindStandardEvents(game.getInputManager(), window, document);
