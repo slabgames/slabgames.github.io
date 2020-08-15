@@ -202,6 +202,7 @@ gdjs.RuntimeGamePixiRenderer.prototype.setWindowSize = function(width, height) {
     var browserWindow = electron.remote.getCurrentWindow();
     if (browserWindow) {
       browserWindow.setContentSize(width, height);
+      console.log("setWindowSize = ("+width + "," + height + ")");
     }
   } else {
     console.warn("Window size can't be changed on this platform.");
@@ -497,7 +498,8 @@ gdjs.RuntimeGamePixiRenderer.prototype.isWebGLSupported = function() {
  */
 gdjs.RuntimeGamePixiRenderer.prototype.getElectron = function() {
   if (typeof require !== 'undefined') {
-    return require('electron');
+    //return require('electron');
+    return null;
   }
 
   return null;
