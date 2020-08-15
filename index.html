@@ -57,7 +57,7 @@
 	<script src="events-tools\stringtools.js" crossorigin="anonymous"></script>
 	<script src="events-tools\windowtools.js" crossorigin="anonymous"></script>
 	<script src="events-tools\networktools.js" crossorigin="anonymous"></script>
-	<script src="pixi-renderers\pixi.min.js" crossorigin="anonymous"></script>
+	<script src="pixi-renderers\pixi.js" crossorigin="anonymous"></script>
 	<script src="pixi-renderers\pixi-filters-tools.js" crossorigin="anonymous"></script>
 	<script src="pixi-renderers\runtimegame-pixi-renderer.js" crossorigin="anonymous"></script>
 	<script src="pixi-renderers\runtimescene-pixi-renderer.js" crossorigin="anonymous"></script>
@@ -102,10 +102,6 @@
 
         //Create a renderer
         game.getRenderer().createStandardCanvas(document.body);
-        game.getRenderer().keepAspectRatio();
-        game.getRenderer().centerWindow();
-        // game.getRenderer().setFullScreen();
-        //game.getRenderer().setWindowSize(720, 1280);
 
         //Bind keyboards/mouse/touch events
         game.getRenderer().bindStandardEvents(game.getInputManager(), window, document);
