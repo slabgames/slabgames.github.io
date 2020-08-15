@@ -43,22 +43,7 @@ gdjs.evtsExt__Essential__bubblybutton.bubblybutton.prototype.doStepPostEventsCon
 gdjs.evtsExt__Essential__bubblybutton.bubblybutton.prototype.doStepPostEventsContext.condition1IsTrue_0 = {val:false};
 
 
-gdjs.evtsExt__Essential__bubblybutton.bubblybutton.prototype.doStepPostEventsContext.mapOfGDgdjs_46evtsExt_95_95Essential_95_95bubblybutton_46bubblybutton_46prototype_46doStepPostEventsContext_46GDObjectObjects1Objects = Hashtable.newFrom({"Object": gdjs.evtsExt__Essential__bubblybutton.bubblybutton.prototype.doStepPostEventsContext.GDObjectObjects1});gdjs.evtsExt__Essential__bubblybutton.bubblybutton.prototype.doStepPostEventsContext.eventsList0 = function(runtimeScene, eventsFunctionContext) {
-
-{
-
-
-gdjs.evtsExt__Essential__bubblybutton.bubblybutton.prototype.doStepPostEventsContext.condition0IsTrue_0.val = false;
-{
-gdjs.evtsExt__Essential__bubblybutton.bubblybutton.prototype.doStepPostEventsContext.condition0IsTrue_0.val = gdjs.evtTools.input.isMouseButtonReleased(runtimeScene, "Left");
-}if (gdjs.evtsExt__Essential__bubblybutton.bubblybutton.prototype.doStepPostEventsContext.condition0IsTrue_0.val) {
-{gdjs.evtTools.sound.playSound(runtimeScene, "audio/sfx/cullick.wav", false, 36, 1);
-}}
-
-}
-
-
-};gdjs.evtsExt__Essential__bubblybutton.bubblybutton.prototype.doStepPostEventsContext.mapOfGDgdjs_46evtsExt_95_95Essential_95_95bubblybutton_46bubblybutton_46prototype_46doStepPostEventsContext_46GDObjectObjects1Objects = Hashtable.newFrom({"Object": gdjs.evtsExt__Essential__bubblybutton.bubblybutton.prototype.doStepPostEventsContext.GDObjectObjects1});gdjs.evtsExt__Essential__bubblybutton.bubblybutton.prototype.doStepPostEventsContext.eventsList1 = function(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__Essential__bubblybutton.bubblybutton.prototype.doStepPostEventsContext.mapOfGDgdjs_46evtsExt_95_95Essential_95_95bubblybutton_46bubblybutton_46prototype_46doStepPostEventsContext_46GDObjectObjects1Objects = Hashtable.newFrom({"Object": gdjs.evtsExt__Essential__bubblybutton.bubblybutton.prototype.doStepPostEventsContext.GDObjectObjects1});gdjs.evtsExt__Essential__bubblybutton.bubblybutton.prototype.doStepPostEventsContext.mapOfGDgdjs_46evtsExt_95_95Essential_95_95bubblybutton_46bubblybutton_46prototype_46doStepPostEventsContext_46GDObjectObjects1Objects = Hashtable.newFrom({"Object": gdjs.evtsExt__Essential__bubblybutton.bubblybutton.prototype.doStepPostEventsContext.GDObjectObjects1});gdjs.evtsExt__Essential__bubblybutton.bubblybutton.prototype.doStepPostEventsContext.eventsList0 = function(runtimeScene, eventsFunctionContext) {
 
 {
 
@@ -85,10 +70,7 @@ gdjs.evtsExt__Essential__bubblybutton.bubblybutton.prototype.doStepPostEventsCon
 {for(var i = 0, len = gdjs.evtsExt__Essential__bubblybutton.bubblybutton.prototype.doStepPostEventsContext.GDObjectObjects1.length ;i < len;++i) {
     gdjs.evtsExt__Essential__bubblybutton.bubblybutton.prototype.doStepPostEventsContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._settarget_scale((gdjs.evtsExt__Essential__bubblybutton.bubblybutton.prototype.doStepPostEventsContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getbubbly_scaling_size()));
 }
-}
-{ //Subevents
-gdjs.evtsExt__Essential__bubblybutton.bubblybutton.prototype.doStepPostEventsContext.eventsList0(runtimeScene, eventsFunctionContext);} //End of subevents
-}
+}}
 
 }
 
@@ -156,7 +138,7 @@ var eventsFunctionContext = {
 gdjs.evtsExt__Essential__bubblybutton.bubblybutton.prototype.doStepPostEventsContext.GDObjectObjects1.length = 0;
 gdjs.evtsExt__Essential__bubblybutton.bubblybutton.prototype.doStepPostEventsContext.GDObjectObjects2.length = 0;
 
-gdjs.evtsExt__Essential__bubblybutton.bubblybutton.prototype.doStepPostEventsContext.eventsList1(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__Essential__bubblybutton.bubblybutton.prototype.doStepPostEventsContext.eventsList0(runtimeScene, eventsFunctionContext);
 return;
 }
 
