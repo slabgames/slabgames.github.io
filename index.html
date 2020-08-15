@@ -100,7 +100,7 @@
         //Initialization
         var game = new gdjs.RuntimeGame(gdjs.projectData, {"forceFullscreen":true});
         //game.setGameResolutionSize(720,1280);
-        game.setGameResolutionResizeMode("adaptHeight");
+        //game.setGameResolutionResizeMode("adaptHeight");
 
         //Create a renderer
         game.getRenderer().createStandardCanvas(document.body);
@@ -119,7 +119,7 @@
             console.log("2-- window innerWidth=" + window.innerWidth + ", innerHeight=" + window.innerHeight );
        	 	console.log("2-- pixi canvas size = (" +game.getRenderer().getCanvas().width + "," + game.getRenderer().getCanvas().height + ")");
         });
-        console.log("versi : 1.3.28")
+        console.log("versi : 1.3.29")
         console.log("1-- window innerWidth=" + window.innerWidth + ", innerHeight=" + window.innerHeight );
        	console.log("1-- pixi canvas size = (" +game.getRenderer().getCanvas().width + "," + game.getRenderer().getCanvas().height + ")");
     })();
