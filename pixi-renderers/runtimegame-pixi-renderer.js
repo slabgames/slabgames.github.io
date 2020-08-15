@@ -50,7 +50,7 @@ gdjs.RuntimeGamePixiRenderer.prototype.createStandardCanvas = function(
   parentElement.appendChild(this._pixiRenderer.view); // add the renderer view element to the DOM
   this._pixiRenderer.view.style['position'] = 'absolute';
   this._pixiRenderer.view.tabIndex = 1; //Ensure that the canvas has the focus.
-  this._resizeCanvas();
+  // this._resizeCanvas();
 
   // Handle scale mode
   if (this._game.getScaleMode() === 'nearest') {
