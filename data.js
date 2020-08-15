@@ -18,7 +18,7 @@ gdjs.projectData = {
         "scaleMode": "linear",
         "sizeOnStartupMode": "adaptWidth",
         "useExternalSourceFiles": false,
-        "version": "1.3.9.2",
+        "version": "1.3.9.3",
         "winExecutableFilename": "",
         "winExecutableIconFile": "",
         "name": "Kuis Panjat Pinang",
