@@ -50,7 +50,7 @@ gdjs.RuntimeGamePixiRenderer.prototype.createStandardCanvas = function(
   parentElement.appendChild(this._pixiRenderer.view); // add the renderer view element to the DOM
   this._pixiRenderer.view.style['position'] = 'absolute';
   this._pixiRenderer.view.tabIndex = 1; //Ensure that the canvas has the focus.
-  // this._resizeCanvas();
+  this._resizeCanvas();
 
   // Handle scale mode
   if (this._game.getScaleMode() === 'nearest') {
@@ -65,7 +65,7 @@ gdjs.RuntimeGamePixiRenderer.prototype.createStandardCanvas = function(
   var that = this;
   window.addEventListener('resize', function() {
     that._game.onWindowInnerSizeChanged();
-    // that._resizeCanvas();
+    that._resizeCanvas();
     that._game._notifySceneForResize = true;
   });
 
@@ -88,7 +88,7 @@ gdjs.RuntimeGamePixiRenderer.getWindowInnerHeight = function() {
  * non fullscreen mode, the requested size will be used.
  */
 gdjs.RuntimeGamePixiRenderer.prototype.updateRendererSize = function() {
-  //this._resizeCanvas();
+  this._resizeCanvas();
 };
 
 /**
@@ -148,6 +148,9 @@ gdjs.RuntimeGamePixiRenderer.prototype._resizeCanvas = function() {
   // Store the canvas size for fast access to it.
   this._canvasWidth = canvasWidth;
   this._canvasHeight = canvasHeight;
+
+  console.log("resizing canvas size = (" + canvasWidth+ "," + canvasHeight+ ")");
+  console.log("max size = (" + maxWidth + ","+ maxHeight + ")");
 };
 
 /**
