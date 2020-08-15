@@ -87,7 +87,7 @@ gdjs.RuntimeGamePixiRenderer.getWindowInnerHeight = function() {
  * non fullscreen mode, the requested size will be used.
  */
 gdjs.RuntimeGamePixiRenderer.prototype.updateRendererSize = function() {
-  this._resizeCanvas();
+  //this._resizeCanvas();
 };
 
 /**
