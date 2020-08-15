@@ -31,22 +31,22 @@ gdjs.RuntimeGamePixiRenderer.prototype.createStandardCanvas = function(
 ) {
   //Create the renderer and setup the rendering area
   //"preserveDrawingBuffer: true" is needed to avoid flickering and background issues on some mobile phones (see #585 #572 #566 #463)
-  // this._pixiRenderer = PIXI.autoDetectRenderer(
-  //   {
-  //     width: this._game.getGameResolutionWidth(),
-  //     height: this._game.getGameResolutionHeight(),
-  //     preserveDrawingBuffer: true,
-  //     antialias: false,
-  //     resolution:1,
-  //     legacy:false,
-  //     forceCanvas:false
-  //   }
-  // );
-  const app = new PIXI.Application({
-        //width: 720, height: 1280, backgroundColor: 0x1099bb, resolution: window.devicePixelRatio || 1,
-        width: 720, height: 1280, backgroundColor: 0x1099bb, resolution: 1,
-    });
-  this._pixiRenderer = app.renderer;
+  this._pixiRenderer = PIXI.autoDetectRenderer(
+    {
+      width: this._game.getGameResolutionWidth(),
+      height: this._game.getGameResolutionHeight(),
+      preserveDrawingBuffer: true,
+      antialias: false,
+      resolution:1,
+      legacy:false,
+      forceCanvas:false
+    }
+  );
+  // const app = new PIXI.Application({
+  //       //width: 720, height: 1280, backgroundColor: 0x1099bb, resolution: window.devicePixelRatio || 1,
+  //       width: 720, height: 1280, backgroundColor: 0x1099bb, resolution: 1,
+  //   });
+  // this._pixiRenderer = app.renderer;
   parentElement.appendChild(this._pixiRenderer.view); // add the renderer view element to the DOM
   this._pixiRenderer.view.style['position'] = 'absolute';
   this._pixiRenderer.view.tabIndex = 1; //Ensure that the canvas has the focus.
@@ -65,7 +65,7 @@ gdjs.RuntimeGamePixiRenderer.prototype.createStandardCanvas = function(
   var that = this;
   window.addEventListener('resize', function() {
     that._game.onWindowInnerSizeChanged();
-    that._resizeCanvas();
+    // that._resizeCanvas();
     that._game._notifySceneForResize = true;
   });
 
