@@ -43,7 +43,8 @@ gdjs.RuntimeGamePixiRenderer.prototype.createStandardCanvas = function(
   //   }
   // );
   const app = new PIXI.Application({
-        width: 720, height: 1280, backgroundColor: 0x1099bb, resolution: window.devicePixelRatio || 1,
+        //width: 720, height: 1280, backgroundColor: 0x1099bb, resolution: window.devicePixelRatio || 1,
+        width: 720, height: 1280, backgroundColor: 0x1099bb, resolution: 1,
     });
   this._pixiRenderer = app.renderer;
   parentElement.appendChild(this._pixiRenderer.view); // add the renderer view element to the DOM
