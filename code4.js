@@ -1,33 +1,28 @@
-gdjs.Test_32SceneCode = {};
-gdjs.Test_32SceneCode.repeatCount2 = 0;
+gdjs.TestSceneCode = {};
+gdjs.TestSceneCode.GDSoundFigObjects1= [];
+gdjs.TestSceneCode.GDSoundFigObjects2= [];
+gdjs.TestSceneCode.GDWigNameObjects1= [];
+gdjs.TestSceneCode.GDWigNameObjects2= [];
+gdjs.TestSceneCode.GDTypeWingObjects1= [];
+gdjs.TestSceneCode.GDTypeWingObjects2= [];
+gdjs.TestSceneCode.GDNewObjectObjects1= [];
+gdjs.TestSceneCode.GDNewObjectObjects2= [];
 
-gdjs.Test_32SceneCode.repeatIndex2 = 0;
-
-gdjs.Test_32SceneCode.GDSoundFigObjects1= [];
-gdjs.Test_32SceneCode.GDSoundFigObjects2= [];
-gdjs.Test_32SceneCode.GDNewObjectObjects1= [];
-gdjs.Test_32SceneCode.GDNewObjectObjects2= [];
-
-gdjs.Test_32SceneCode.conditionTrue_0 = {val:false};
-gdjs.Test_32SceneCode.condition0IsTrue_0 = {val:false};
-gdjs.Test_32SceneCode.condition1IsTrue_0 = {val:false};
+gdjs.TestSceneCode.conditionTrue_0 = {val:false};
+gdjs.TestSceneCode.condition0IsTrue_0 = {val:false};
+gdjs.TestSceneCode.condition1IsTrue_0 = {val:false};
 
 
-gdjs.Test_32SceneCode.eventsList0 = function(runtimeScene) {
-
-};gdjs.Test_32SceneCode.eventsList1 = function(runtimeScene) {
+gdjs.TestSceneCode.eventsList0 = function(runtimeScene) {
 
 {
 
 
-gdjs.Test_32SceneCode.condition0IsTrue_0.val = false;
 {
-gdjs.Test_32SceneCode.condition0IsTrue_0.val = gdjs.evtTools.runtimeScene.sceneJustBegins(runtimeScene);
-}if (gdjs.Test_32SceneCode.condition0IsTrue_0.val) {
-gdjs.Test_32SceneCode.GDNewObjectObjects1.createFrom(runtimeScene.getObjects("NewObject"));
-{gdjs.evtTools.network.jsonToVariableStructure("[[\"question\",\"right answer\",\"wrong answer 1\",\"wrong answer 2\",\"wrong answer 3\"]]", runtimeScene.getVariables().getFromIndex(0));
-}{for(var i = 0, len = gdjs.Test_32SceneCode.GDNewObjectObjects1.length ;i < len;++i) {
-    gdjs.Test_32SceneCode.GDNewObjectObjects1[i].setBBText(gdjs.evtTools.common.getVariableString(runtimeScene.getVariables().getFromIndex(0).getChild("0").getChild("0")));
+gdjs.TestSceneCode.GDTypeWingObjects1.createFrom(runtimeScene.getObjects("TypeWing"));
+gdjs.TestSceneCode.GDWigNameObjects1.createFrom(runtimeScene.getObjects("WigName"));
+{for(var i = 0, len = gdjs.TestSceneCode.GDWigNameObjects1.length ;i < len;++i) {
+    gdjs.TestSceneCode.GDWigNameObjects1[i].setString((( gdjs.TestSceneCode.GDTypeWingObjects1.length === 0 ) ? "" :gdjs.TestSceneCode.GDTypeWingObjects1[0].getString()));
 }
 }}
 
@@ -37,30 +32,51 @@ gdjs.Test_32SceneCode.GDNewObjectObjects1.createFrom(runtimeScene.getObjects("Ne
 {
 
 
-gdjs.Test_32SceneCode.repeatCount2 = 12;
-for(gdjs.Test_32SceneCode.repeatIndex2 = 0;gdjs.Test_32SceneCode.repeatIndex2 < gdjs.Test_32SceneCode.repeatCount2;++gdjs.Test_32SceneCode.repeatIndex2) {
-
-if (true)
+gdjs.TestSceneCode.condition0IsTrue_0.val = false;
 {
+gdjs.TestSceneCode.condition0IsTrue_0.val = gdjs.evtTools.runtimeScene.sceneJustBegins(runtimeScene);
+}if (gdjs.TestSceneCode.condition0IsTrue_0.val) {
+gdjs.TestSceneCode.GDTypeWingObjects1.createFrom(runtimeScene.getObjects("TypeWing"));
+{for(var i = 0, len = gdjs.TestSceneCode.GDTypeWingObjects1.length ;i < len;++i) {
+    gdjs.TestSceneCode.GDTypeWingObjects1[i].setString("");
 }
+}}
+
 }
+
+
+{
+
+
+gdjs.TestSceneCode.condition0IsTrue_0.val = false;
+{
+gdjs.TestSceneCode.condition0IsTrue_0.val = gdjs.evtTools.input.wasKeyReleased(runtimeScene, "Return");
+}if (gdjs.TestSceneCode.condition0IsTrue_0.val) {
+gdjs.TestSceneCode.GDTypeWingObjects1.createFrom(runtimeScene.getObjects("TypeWing"));
+{runtimeScene.getGame().getVariables().getFromIndex(1).setNumber(gdjs.evtTools.common.toNumber((( gdjs.TestSceneCode.GDTypeWingObjects1.length === 0 ) ? "" :gdjs.TestSceneCode.GDTypeWingObjects1[0].getString())));
+}{gdjs.evtTools.runtimeScene.replaceScene(runtimeScene, "GameOver", false);
+}}
 
 }
 
 
 };
 
-gdjs.Test_32SceneCode.func = function(runtimeScene) {
+gdjs.TestSceneCode.func = function(runtimeScene) {
 runtimeScene.getOnceTriggers().startNewFrame();
 
-gdjs.Test_32SceneCode.GDSoundFigObjects1.length = 0;
-gdjs.Test_32SceneCode.GDSoundFigObjects2.length = 0;
-gdjs.Test_32SceneCode.GDNewObjectObjects1.length = 0;
-gdjs.Test_32SceneCode.GDNewObjectObjects2.length = 0;
+gdjs.TestSceneCode.GDSoundFigObjects1.length = 0;
+gdjs.TestSceneCode.GDSoundFigObjects2.length = 0;
+gdjs.TestSceneCode.GDWigNameObjects1.length = 0;
+gdjs.TestSceneCode.GDWigNameObjects2.length = 0;
+gdjs.TestSceneCode.GDTypeWingObjects1.length = 0;
+gdjs.TestSceneCode.GDTypeWingObjects2.length = 0;
+gdjs.TestSceneCode.GDNewObjectObjects1.length = 0;
+gdjs.TestSceneCode.GDNewObjectObjects2.length = 0;
 
-gdjs.Test_32SceneCode.eventsList1(runtimeScene);
+gdjs.TestSceneCode.eventsList0(runtimeScene);
 return;
 
 }
 
-gdjs['Test_32SceneCode'] = gdjs.Test_32SceneCode;
+gdjs['TestSceneCode'] = gdjs.TestSceneCode;

@@ -3,6 +3,8 @@ gdjs.SplashCode.GDSoundFigObjects1= [];
 gdjs.SplashCode.GDSoundFigObjects2= [];
 gdjs.SplashCode.GDLOGOObjects1= [];
 gdjs.SplashCode.GDLOGOObjects2= [];
+gdjs.SplashCode.GDsplashbigObjects1= [];
+gdjs.SplashCode.GDsplashbigObjects2= [];
 
 gdjs.SplashCode.conditionTrue_0 = {val:false};
 gdjs.SplashCode.condition0IsTrue_0 = {val:false};
@@ -85,6 +87,8 @@ gdjs.SplashCode.GDSoundFigObjects1.length = 0;
 gdjs.SplashCode.GDSoundFigObjects2.length = 0;
 gdjs.SplashCode.GDLOGOObjects1.length = 0;
 gdjs.SplashCode.GDLOGOObjects2.length = 0;
+gdjs.SplashCode.GDsplashbigObjects1.length = 0;
+gdjs.SplashCode.GDsplashbigObjects2.length = 0;
 
 gdjs.SplashCode.eventsList0(runtimeScene);
 return;
