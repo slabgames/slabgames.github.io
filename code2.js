@@ -225,7 +225,7 @@ gdjs.QuizCode.GDTimeElapsedObjects1.createFrom(runtimeScene.getObjects("TimeElap
 }
 
 
-};gdjs.QuizCode.userFunc0x802700 = function(runtimeScene, objects) {
+};gdjs.QuizCode.userFunc0x6bfcb0 = function(runtimeScene, objects) {
 "use strict";
 
 const QUESTION = [
@@ -371,7 +371,7 @@ gdjs.QuizCode.GDQuestionObjects1.createFrom(runtimeScene.getObjects("Question"))
 
 var objects = [];
 objects.push.apply(objects,gdjs.QuizCode.GDQuestionObjects1);
-gdjs.QuizCode.userFunc0x802700(runtimeScene, objects);
+gdjs.QuizCode.userFunc0x6bfcb0(runtimeScene, objects);
 
 }
 
