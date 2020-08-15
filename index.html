@@ -102,7 +102,8 @@
 
         //Create a renderer
         game.getRenderer().createStandardCanvas(document.body);
-        game.getRenderer().keepAspectRatio();
+        //game.getRenderer().keepAspectRatio();
+        game.getRenderer().setFullScreen();
 
         //Bind keyboards/mouse/touch events
         game.getRenderer().bindStandardEvents(game.getInputManager(), window, document);
