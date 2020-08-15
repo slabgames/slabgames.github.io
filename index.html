@@ -10,22 +10,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
 	<style>
+		html {
+			overflow: hidden;
+		}
 		body {
 			margin: 0;
 			padding: 0;
 			background-color: #000000;
             overflow: hidden;
-            overflow-x: hidden;
             max-width: 100%;
     		height: 100%;
+    		position: relative;
 		}
 		div.wrap {
 			height:100%; 
 			overflow:hidden;
-			overflow-y: hidden;
-			overflow-wrap: hidden;
 			max-width: 100%;
-			position: absolute;
     	}
         #canvasArea {
             margin-left: auto;
@@ -34,7 +34,6 @@
             overflow-x: hidden;
             max-width: 100%;
     		height: 100%;
-    		position: absolute;
         }
 
         
@@ -113,7 +112,7 @@
 
 	    (function() {
 	        //Initialization
-	        var game = new gdjs.RuntimeGame(gdjs.projectData, {"forceFullscreen":true});
+	        var game = new gdjs.RuntimeGame(gdjs.projectData, {});
 	        //game.setGameResolutionSize(720,1280);
 	        //game.setGameResolutionResizeMode("adaptHeight");
 
@@ -134,7 +133,7 @@
 	            console.log("2-- window innerWidth=" + window.innerWidth + ", innerHeight=" + window.innerHeight );
 	       	 	console.log("2-- pixi canvas size = (" +game.getRenderer().getCanvas().width + "," + game.getRenderer().getCanvas().height + ")");
 	        });
-	        console.log("versi : 1.3.32")
+	        console.log("versi : 1.3.34")
 	        console.log("1-- window innerWidth=" + window.innerWidth + ", innerHeight=" + window.innerHeight );
 	       	console.log("1-- pixi canvas size = (" +game.getRenderer().getCanvas().width + "," + game.getRenderer().getCanvas().height + ")");
 	    })();

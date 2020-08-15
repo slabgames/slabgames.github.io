@@ -36,10 +36,10 @@ gdjs.RuntimeGamePixiRenderer.prototype.createStandardCanvas = function(
       width: this._game.getGameResolutionWidth(),
       height: this._game.getGameResolutionHeight(),
       preserveDrawingBuffer: true,
-      antialias: false,
-      resolution:1,
-      legacy:false,
-      forceCanvas:false
+      antialias: false
+      //resolution:1,
+      //legacy:false,
+      //forceCanvas:false
     }
   );
   // const app = new PIXI.Application({
