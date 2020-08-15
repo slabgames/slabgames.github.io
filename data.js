@@ -12,7 +12,7 @@ gdjs.projectData = {
         "folderProject": true,
         "linuxExecutableFilename": "",
         "macExecutableFilename": "",
-        "orientation": "landscape",
+        "orientation": "portrait",
         "packageName": "com.slabgames.kuispanjatpinang",
         "projectFile": "D:\\work\\panjatpinang\\panjat-pinang\\game.json",
         "scaleMode": "linear",
