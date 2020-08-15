@@ -10,7 +10,7 @@ gdjs.RuntimeGamePixiRenderer = function(game, forceFullscreen) {
 
   this._isFullPage = false; //Used to track if the canvas is displayed on the full page.
   this._isFullscreen = false; //Used to track if the window is displayed as fullscreen (see setFullscreen method).
-  this._forceFullscreen = forceFullscreen; //If set to true, the canvas will always be displayed as fullscreen, even if _isFullscreen == false.
+  this._forceFullscreen = false; //If set to true, the canvas will always be displayed as fullscreen, even if _isFullscreen == false.
 
   /** @type {?PIXI.Renderer} */
   this._pixiRenderer = null;
