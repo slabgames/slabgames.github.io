@@ -101,7 +101,13 @@ gdjs.GameOverCode.GDKeyEntryObjects2.length = 0;
 gdjs.GameOverCode.forEachTemporary2 = gdjs.GameOverCode.GDKeyEntryObjects1[gdjs.GameOverCode.forEachIndex2];
 gdjs.GameOverCode.GDKeyEntryObjects2.push(gdjs.GameOverCode.forEachTemporary2);
 if (true) {
+{for(var i = 0, len = gdjs.GameOverCode.GDKeyEntryObjects2.length ;i < len;++i) {
+    gdjs.GameOverCode.GDKeyEntryObjects2[i].setLayer("Keyboard");
 }
+}{for(var i = 0, len = gdjs.GameOverCode.GDKeyEntryObjects2.length ;i < len;++i) {
+    gdjs.GameOverCode.GDKeyEntryObjects2[i].setString((gdjs.RuntimeObject.getVariableString(gdjs.GameOverCode.GDKeyEntryObjects2[i].getVariables().getFromIndex(0))));
+}
+}}
 }
 
 }
@@ -167,7 +173,7 @@ gdjs.GameOverCode.GDDefaultNameObjects1.createFrom(runtimeScene.getObjects("Defa
 }
 
 
-};gdjs.GameOverCode.mapOfGDgdjs_46GameOverCode_46GDOkButtonObjects2Objects = Hashtable.newFrom({"OkButton": gdjs.GameOverCode.GDOkButtonObjects2});gdjs.GameOverCode.userFunc0x72e698 = function(runtimeScene) {
+};gdjs.GameOverCode.mapOfGDgdjs_46GameOverCode_46GDOkButtonObjects2Objects = Hashtable.newFrom({"OkButton": gdjs.GameOverCode.GDOkButtonObjects2});gdjs.GameOverCode.userFunc0x813668 = function(runtimeScene) {
 "use strict";
 
 var playerName = runtimeScene.getVariables().get("JS_NameToSend").getAsString();
@@ -209,7 +215,7 @@ gdjs.GameOverCode.eventsList3 = function(runtimeScene) {
 {
 
 
-gdjs.GameOverCode.userFunc0x72e698(runtimeScene);
+gdjs.GameOverCode.userFunc0x813668(runtimeScene);
 
 }
 
