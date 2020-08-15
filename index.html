@@ -113,10 +113,11 @@
         //Load all assets and start the game
         game.loadAllAssets(function() {
             game.startGameLoop();
+            console.log("window innerWidth=" + window.innerWidth + ", innerHeight=" + window.innerHeight );
+       	 	console.log("pixi canvas size = (" +game.getRenderer().getCanvas().width + "," + game.getRenderer().getCanvas().height + ")");
         });
-        console.log("versi : 1.3.9.5")
-        console.log("window innerWidth=" + window.innerWidth + ", innerHeight=" + window.innerHeight );
-        console.log("pixi canvas size = (" +game.getRenderer().getCanvas().width + "," + game.getRenderer().getCanvas().height + ")");
+        console.log("versi : 1.3.9.6")
+
     })();
 
 	</script>
