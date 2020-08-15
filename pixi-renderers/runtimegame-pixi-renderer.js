@@ -42,11 +42,7 @@ gdjs.RuntimeGamePixiRenderer.prototype.createStandardCanvas = function(
       //forceCanvas:false
     }
   );
-  // const app = new PIXI.Application({
-  //       //width: 720, height: 1280, backgroundColor: 0x1099bb, resolution: window.devicePixelRatio || 1,
-  //       width: 720, height: 1280, backgroundColor: 0x1099bb, resolution: 1,
-  //   });
-  // this._pixiRenderer = app.renderer;
+  
   parentElement.appendChild(this._pixiRenderer.view); // add the renderer view element to the DOM
   this._pixiRenderer.view.style['position'] = 'absolute';
   this._pixiRenderer.view.tabIndex = 1; //Ensure that the canvas has the focus.
