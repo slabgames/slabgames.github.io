@@ -38,7 +38,7 @@ gdjs.RuntimeGamePixiRenderer.prototype.createStandardCanvas = function(
       preserveDrawingBuffer: true,
       antialias: false,
       resolution:1,
-      legacy:true
+      legacy:false
     }
   );
   parentElement.appendChild(this._pixiRenderer.view); // add the renderer view element to the DOM
