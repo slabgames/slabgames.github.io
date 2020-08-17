@@ -37,7 +37,7 @@ gdjs.evtsExt__TextEntryVirtualKeyboard__TextEntryVirtualKeyboard.TextEntryVirtua
 gdjs.evtsExt__TextEntryVirtualKeyboard__TextEntryVirtualKeyboard.TextEntryVirtualKeyboard.prototype.onCreatedContext.condition1IsTrue_0 = {val:false};
 
 
-gdjs.evtsExt__TextEntryVirtualKeyboard__TextEntryVirtualKeyboard.TextEntryVirtualKeyboard.prototype.onCreatedContext.userFunc0x81d160 = function(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__TextEntryVirtualKeyboard__TextEntryVirtualKeyboard.TextEntryVirtualKeyboard.prototype.onCreatedContext.userFunc0x75b148 = function(runtimeScene, eventsFunctionContext) {
 "use strict";
 gdjs._extensionMobileKeyboard = gdjs._extensionMobileKeyboard || {};
 
@@ -53,9 +53,8 @@ gdjs._extensionMobileKeyboard.openKeyboard = function (eventsFunctionContext) {
     if (input) {
         var textEntry = eventsFunctionContext.getObjects("Object")[0];
         input.value = textEntry.getString();
-        input.style.removeProperty("visibility");
+        //input.style.removeProperty("visibility");
         input.focus();
-        input.trigger('focus');
     }
 }
 
@@ -96,7 +95,7 @@ var setUniqueIdInObject = function (id) {
 const input = document.createElement("input");
 input.type = "text";
 input.setAttribute("spellcheck", "false"); // Disable spell checking (blue line on mobile under words)
-input.style = "background-color: transparent;border: 0px;outline: transparent;color: #0000;";
+input.style = "background-color: white;border: 0px;outline: transparent;color: #0000;";
 
 // Create an identifier that is unique
 var uniqueId = "GDevelop_Mobile_Keyboard_Input" + Date.now() + '-' + Math.floor(Math.random() * 100000);
@@ -104,7 +103,6 @@ input.id = uniqueId; // Apply it to the input
 setUniqueIdInObject(uniqueId); // Apply it to the object
 
 document.body.appendChild(input); // Add input to the document HTML
-
 
 // Handle key presses on the input
 input.addEventListener("keyup", function (event) {
@@ -136,7 +134,7 @@ gdjs.evtsExt__TextEntryVirtualKeyboard__TextEntryVirtualKeyboard.TextEntryVirtua
 {
 
 
-gdjs.evtsExt__TextEntryVirtualKeyboard__TextEntryVirtualKeyboard.TextEntryVirtualKeyboard.prototype.onCreatedContext.userFunc0x81d160(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+gdjs.evtsExt__TextEntryVirtualKeyboard__TextEntryVirtualKeyboard.TextEntryVirtualKeyboard.prototype.onCreatedContext.userFunc0x75b148(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
 
 }
 
@@ -223,7 +221,7 @@ gdjs.evtsExt__TextEntryVirtualKeyboard__TextEntryVirtualKeyboard.TextEntryVirtua
 gdjs.evtsExt__TextEntryVirtualKeyboard__TextEntryVirtualKeyboard.TextEntryVirtualKeyboard.prototype.openKeyboardContext.condition1IsTrue_0 = {val:false};
 
 
-gdjs.evtsExt__TextEntryVirtualKeyboard__TextEntryVirtualKeyboard.TextEntryVirtualKeyboard.prototype.openKeyboardContext.userFunc0x81d160 = function(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__TextEntryVirtualKeyboard__TextEntryVirtualKeyboard.TextEntryVirtualKeyboard.prototype.openKeyboardContext.userFunc0x75b148 = function(runtimeScene, eventsFunctionContext) {
 "use strict";
 gdjs._extensionMobileKeyboard = gdjs._extensionMobileKeyboard || {};
 
@@ -236,7 +234,7 @@ gdjs.evtsExt__TextEntryVirtualKeyboard__TextEntryVirtualKeyboard.TextEntryVirtua
 {
 
 
-gdjs.evtsExt__TextEntryVirtualKeyboard__TextEntryVirtualKeyboard.TextEntryVirtualKeyboard.prototype.openKeyboardContext.userFunc0x81d160(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+gdjs.evtsExt__TextEntryVirtualKeyboard__TextEntryVirtualKeyboard.TextEntryVirtualKeyboard.prototype.openKeyboardContext.userFunc0x75b148(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
 
 }
 
@@ -316,7 +314,7 @@ gdjs.evtsExt__TextEntryVirtualKeyboard__TextEntryVirtualKeyboard.TextEntryVirtua
 gdjs.evtsExt__TextEntryVirtualKeyboard__TextEntryVirtualKeyboard.TextEntryVirtualKeyboard.prototype.closeKeyboardContext.condition1IsTrue_0 = {val:false};
 
 
-gdjs.evtsExt__TextEntryVirtualKeyboard__TextEntryVirtualKeyboard.TextEntryVirtualKeyboard.prototype.closeKeyboardContext.userFunc0x81d160 = function(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__TextEntryVirtualKeyboard__TextEntryVirtualKeyboard.TextEntryVirtualKeyboard.prototype.closeKeyboardContext.userFunc0x75b148 = function(runtimeScene, eventsFunctionContext) {
 "use strict";
 gdjs._extensionMobileKeyboard = gdjs._extensionMobileKeyboard || {};
 
@@ -329,7 +327,7 @@ gdjs.evtsExt__TextEntryVirtualKeyboard__TextEntryVirtualKeyboard.TextEntryVirtua
 {
 
 
-gdjs.evtsExt__TextEntryVirtualKeyboard__TextEntryVirtualKeyboard.TextEntryVirtualKeyboard.prototype.closeKeyboardContext.userFunc0x81d160(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+gdjs.evtsExt__TextEntryVirtualKeyboard__TextEntryVirtualKeyboard.TextEntryVirtualKeyboard.prototype.closeKeyboardContext.userFunc0x75b148(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
 
 }
 
@@ -409,7 +407,7 @@ gdjs.evtsExt__TextEntryVirtualKeyboard__TextEntryVirtualKeyboard.TextEntryVirtua
 gdjs.evtsExt__TextEntryVirtualKeyboard__TextEntryVirtualKeyboard.TextEntryVirtualKeyboard.prototype.onOwnerRemovedFromSceneContext.condition1IsTrue_0 = {val:false};
 
 
-gdjs.evtsExt__TextEntryVirtualKeyboard__TextEntryVirtualKeyboard.TextEntryVirtualKeyboard.prototype.onOwnerRemovedFromSceneContext.userFunc0x81d160 = function(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__TextEntryVirtualKeyboard__TextEntryVirtualKeyboard.TextEntryVirtualKeyboard.prototype.onOwnerRemovedFromSceneContext.userFunc0x75b148 = function(runtimeScene, eventsFunctionContext) {
 "use strict";
 gdjs._extensionMobileKeyboard = gdjs._extensionMobileKeyboard || {};
 
@@ -424,7 +422,7 @@ gdjs.evtsExt__TextEntryVirtualKeyboard__TextEntryVirtualKeyboard.TextEntryVirtua
 {
 
 
-gdjs.evtsExt__TextEntryVirtualKeyboard__TextEntryVirtualKeyboard.TextEntryVirtualKeyboard.prototype.onOwnerRemovedFromSceneContext.userFunc0x81d160(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+gdjs.evtsExt__TextEntryVirtualKeyboard__TextEntryVirtualKeyboard.TextEntryVirtualKeyboard.prototype.onOwnerRemovedFromSceneContext.userFunc0x75b148(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
 
 }
 
