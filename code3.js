@@ -72,10 +72,12 @@ gdjs.GameOverCode.conditionTrue_0 = {val:false};
 gdjs.GameOverCode.condition0IsTrue_0 = {val:false};
 gdjs.GameOverCode.condition1IsTrue_0 = {val:false};
 gdjs.GameOverCode.condition2IsTrue_0 = {val:false};
+gdjs.GameOverCode.condition3IsTrue_0 = {val:false};
 gdjs.GameOverCode.conditionTrue_1 = {val:false};
 gdjs.GameOverCode.condition0IsTrue_1 = {val:false};
 gdjs.GameOverCode.condition1IsTrue_1 = {val:false};
 gdjs.GameOverCode.condition2IsTrue_1 = {val:false};
+gdjs.GameOverCode.condition3IsTrue_1 = {val:false};
 
 
 gdjs.GameOverCode.eventsList0 = function(runtimeScene) {
@@ -262,13 +264,20 @@ gdjs.GameOverCode.eventsList2(runtimeScene);} //End of subevents
 
 gdjs.GameOverCode.condition0IsTrue_0.val = false;
 gdjs.GameOverCode.condition1IsTrue_0.val = false;
+gdjs.GameOverCode.condition2IsTrue_0.val = false;
 {
 gdjs.GameOverCode.condition0IsTrue_0.val = gdjs.evtTools.camera.layerIsVisible(runtimeScene, "Keyboard");
 }if ( gdjs.GameOverCode.condition0IsTrue_0.val ) {
 {
-gdjs.GameOverCode.condition1IsTrue_0.val = gdjs.evtTools.input.isMouseButtonReleased(runtimeScene, "Left");
+gdjs.GameOverCode.condition1IsTrue_0.val = gdjs.evtTools.input.isMouseButtonPressed(runtimeScene, "Left");
+}if ( gdjs.GameOverCode.condition1IsTrue_0.val ) {
+{
+{gdjs.GameOverCode.conditionTrue_1 = gdjs.GameOverCode.condition2IsTrue_0;
+gdjs.GameOverCode.conditionTrue_1.val = runtimeScene.getOnceTriggers().triggerOnce(8330012);
+}
 }}
-if (gdjs.GameOverCode.condition1IsTrue_0.val) {
+}
+if (gdjs.GameOverCode.condition2IsTrue_0.val) {
 
 { //Subevents
 gdjs.GameOverCode.eventsList3(runtimeScene);} //End of subevents
@@ -277,7 +286,7 @@ gdjs.GameOverCode.eventsList3(runtimeScene);} //End of subevents
 }
 
 
-};gdjs.GameOverCode.mapOfGDgdjs_46GameOverCode_46GDOkButtonObjects3Objects = Hashtable.newFrom({"OkButton": gdjs.GameOverCode.GDOkButtonObjects3});gdjs.GameOverCode.userFunc0x803b60 = function(runtimeScene) {
+};gdjs.GameOverCode.mapOfGDgdjs_46GameOverCode_46GDOkButtonObjects3Objects = Hashtable.newFrom({"OkButton": gdjs.GameOverCode.GDOkButtonObjects3});gdjs.GameOverCode.userFunc0x6b5e00 = function(runtimeScene) {
 "use strict";
 
 var playerName = runtimeScene.getVariables().get("JS_NameToSend").getAsString();
@@ -319,23 +328,12 @@ gdjs.GameOverCode.eventsList5 = function(runtimeScene) {
 {
 
 
-gdjs.GameOverCode.userFunc0x803b60(runtimeScene);
+gdjs.GameOverCode.userFunc0x6b5e00(runtimeScene);
 
 }
 
 
-};gdjs.GameOverCode.mapOfGDgdjs_46GameOverCode_46GDInputNamePatchObjects3Objects = Hashtable.newFrom({"InputNamePatch": gdjs.GameOverCode.GDInputNamePatchObjects3});gdjs.GameOverCode.mapOfGDgdjs_46GameOverCode_46GDInputNamePatchObjects2Objects = Hashtable.newFrom({"InputNamePatch": gdjs.GameOverCode.GDInputNamePatchObjects2});gdjs.GameOverCode.eventsList6 = function(runtimeScene) {
-
-{
-
-
-{
-}
-
-}
-
-
-};gdjs.GameOverCode.eventsList7 = function(runtimeScene) {
+};gdjs.GameOverCode.mapOfGDgdjs_46GameOverCode_46GDInputNamePatchObjects3Objects = Hashtable.newFrom({"InputNamePatch": gdjs.GameOverCode.GDInputNamePatchObjects3});gdjs.GameOverCode.eventsList6 = function(runtimeScene) {
 
 {
 
@@ -373,17 +371,20 @@ gdjs.GameOverCode.eventsList5(runtimeScene);} //End of subevents
 
 {
 
+
+
+}
+
+
+{
+
 gdjs.GameOverCode.GDInputNamePatchObjects3.createFrom(runtimeScene.getObjects("InputNamePatch"));
 
 gdjs.GameOverCode.condition0IsTrue_0.val = false;
 {
 gdjs.GameOverCode.condition0IsTrue_0.val = gdjs.evtTools.input.cursorOnObject(gdjs.GameOverCode.mapOfGDgdjs_46GameOverCode_46GDInputNamePatchObjects3Objects, runtimeScene, true, false);
 }if (gdjs.GameOverCode.condition0IsTrue_0.val) {
-gdjs.GameOverCode.GDKeyboardObjects3.createFrom(runtimeScene.getObjects("Keyboard"));
-{for(var i = 0, len = gdjs.GameOverCode.GDKeyboardObjects3.length ;i < len;++i) {
-    gdjs.GameOverCode.GDKeyboardObjects3[i].getBehavior("TextEntryVirtualKeyboard").openKeyboard((typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined));
-}
-}{gdjs.evtTools.camera.showLayer(runtimeScene, "Keyboard");
+{gdjs.evtTools.camera.showLayer(runtimeScene, "Keyboard");
 }}
 
 }
@@ -391,25 +392,12 @@ gdjs.GameOverCode.GDKeyboardObjects3.createFrom(runtimeScene.getObjects("Keyboar
 
 {
 
-gdjs.GameOverCode.GDInputNamePatchObjects2.createFrom(runtimeScene.getObjects("InputNamePatch"));
 
-gdjs.GameOverCode.condition0IsTrue_0.val = false;
-{
-gdjs.GameOverCode.condition0IsTrue_0.val = gdjs.evtTools.input.cursorOnObject(gdjs.GameOverCode.mapOfGDgdjs_46GameOverCode_46GDInputNamePatchObjects2Objects, runtimeScene, true, true);
-}if (gdjs.GameOverCode.condition0IsTrue_0.val) {
-gdjs.GameOverCode.GDKeyboardObjects2.createFrom(runtimeScene.getObjects("Keyboard"));
-{for(var i = 0, len = gdjs.GameOverCode.GDKeyboardObjects2.length ;i < len;++i) {
-    gdjs.GameOverCode.GDKeyboardObjects2[i].getBehavior("TextEntryVirtualKeyboard").closeKeyboard((typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined));
-}
-}
-{ //Subevents
-gdjs.GameOverCode.eventsList6(runtimeScene);} //End of subevents
-}
 
 }
 
 
-};gdjs.GameOverCode.eventsList8 = function(runtimeScene) {
+};gdjs.GameOverCode.eventsList7 = function(runtimeScene) {
 
 {
 
@@ -424,7 +412,7 @@ gdjs.GameOverCode.condition0IsTrue_0.val = gdjs.evtTools.common.getVariableNumbe
 }
 
 
-};gdjs.GameOverCode.eventsList9 = function(runtimeScene) {
+};gdjs.GameOverCode.eventsList8 = function(runtimeScene) {
 
 {
 
@@ -435,7 +423,7 @@ gdjs.GameOverCode.condition0IsTrue_0.val = gdjs.evtTools.input.isMouseButtonRele
 }if (gdjs.GameOverCode.condition0IsTrue_0.val) {
 
 { //Subevents
-gdjs.GameOverCode.eventsList7(runtimeScene);} //End of subevents
+gdjs.GameOverCode.eventsList6(runtimeScene);} //End of subevents
 }
 
 }
@@ -477,13 +465,13 @@ gdjs.GameOverCode.GDReturnTestObjects1.createFrom(runtimeScene.getObjects("Retur
 }{runtimeScene.getVariables().getFromIndex(6).sub(gdjs.evtTools.runtimeScene.getElapsedTimeInSeconds(runtimeScene));
 }
 { //Subevents
-gdjs.GameOverCode.eventsList8(runtimeScene);} //End of subevents
+gdjs.GameOverCode.eventsList7(runtimeScene);} //End of subevents
 }
 
 }
 
 
-};gdjs.GameOverCode.eventsList10 = function(runtimeScene) {
+};gdjs.GameOverCode.eventsList9 = function(runtimeScene) {
 
 {
 
@@ -496,7 +484,7 @@ gdjs.GameOverCode.eventsList8(runtimeScene);} //End of subevents
 }
 
 
-};gdjs.GameOverCode.eventsList11 = function(runtimeScene) {
+};gdjs.GameOverCode.eventsList10 = function(runtimeScene) {
 
 {
 
@@ -531,7 +519,7 @@ gdjs.GameOverCode.eventsList4(runtimeScene);
 {
 
 
-gdjs.GameOverCode.eventsList9(runtimeScene);
+gdjs.GameOverCode.eventsList8(runtimeScene);
 }
 
 
@@ -555,7 +543,7 @@ gdjs.GameOverCode.condition0IsTrue_0.val = gdjs.evtTools.common.logicalNegation(
 }if (gdjs.GameOverCode.condition0IsTrue_0.val) {
 
 { //Subevents
-gdjs.GameOverCode.eventsList10(runtimeScene);} //End of subevents
+gdjs.GameOverCode.eventsList9(runtimeScene);} //End of subevents
 }
 
 }
@@ -627,7 +615,7 @@ gdjs.GameOverCode.GDHAPUSObjects2.length = 0;
 gdjs.GameOverCode.GDHAPUSObjects3.length = 0;
 gdjs.GameOverCode.GDHAPUSObjects4.length = 0;
 
-gdjs.GameOverCode.eventsList11(runtimeScene);
+gdjs.GameOverCode.eventsList10(runtimeScene);
 return;
 
 }
