@@ -173,7 +173,7 @@ gdjs.GameOverCode.GDDefaultNameObjects1.createFrom(runtimeScene.getObjects("Defa
 }
 
 
-};gdjs.GameOverCode.mapOfGDgdjs_46GameOverCode_46GDOkButtonObjects2Objects = Hashtable.newFrom({"OkButton": gdjs.GameOverCode.GDOkButtonObjects2});gdjs.GameOverCode.userFunc0x8013c0 = function(runtimeScene) {
+};gdjs.GameOverCode.mapOfGDgdjs_46GameOverCode_46GDOkButtonObjects2Objects = Hashtable.newFrom({"OkButton": gdjs.GameOverCode.GDOkButtonObjects2});gdjs.GameOverCode.userFunc0x758dc8 = function(runtimeScene) {
 "use strict";
 
 var playerName = runtimeScene.getVariables().get("JS_NameToSend").getAsString();
@@ -215,12 +215,12 @@ gdjs.GameOverCode.eventsList3 = function(runtimeScene) {
 {
 
 
-gdjs.GameOverCode.userFunc0x8013c0(runtimeScene);
+gdjs.GameOverCode.userFunc0x758dc8(runtimeScene);
 
 }
 
 
-};gdjs.GameOverCode.mapOfGDgdjs_46GameOverCode_46GDInputNamePatchObjects2Objects = Hashtable.newFrom({"InputNamePatch": gdjs.GameOverCode.GDInputNamePatchObjects2});gdjs.GameOverCode.mapOfGDgdjs_46GameOverCode_46GDInputNamePatchObjects1Objects = Hashtable.newFrom({"InputNamePatch": gdjs.GameOverCode.GDInputNamePatchObjects1});gdjs.GameOverCode.eventsList4 = function(runtimeScene) {
+};gdjs.GameOverCode.mapOfGDgdjs_46GameOverCode_46GDDefaultNameObjects2Objects = Hashtable.newFrom({"DefaultName": gdjs.GameOverCode.GDDefaultNameObjects2});gdjs.GameOverCode.mapOfGDgdjs_46GameOverCode_46GDInputNamePatchObjects1Objects = Hashtable.newFrom({"InputNamePatch": gdjs.GameOverCode.GDInputNamePatchObjects1});gdjs.GameOverCode.eventsList4 = function(runtimeScene) {
 
 {
 
@@ -258,11 +258,11 @@ gdjs.GameOverCode.eventsList3(runtimeScene);} //End of subevents
 
 {
 
-gdjs.GameOverCode.GDInputNamePatchObjects2.createFrom(runtimeScene.getObjects("InputNamePatch"));
+gdjs.GameOverCode.GDDefaultNameObjects2.createFrom(runtimeScene.getObjects("DefaultName"));
 
 gdjs.GameOverCode.condition0IsTrue_0.val = false;
 {
-gdjs.GameOverCode.condition0IsTrue_0.val = gdjs.evtTools.input.cursorOnObject(gdjs.GameOverCode.mapOfGDgdjs_46GameOverCode_46GDInputNamePatchObjects2Objects, runtimeScene, true, false);
+gdjs.GameOverCode.condition0IsTrue_0.val = gdjs.evtTools.input.cursorOnObject(gdjs.GameOverCode.mapOfGDgdjs_46GameOverCode_46GDDefaultNameObjects2Objects, runtimeScene, true, false);
 }if (gdjs.GameOverCode.condition0IsTrue_0.val) {
 gdjs.GameOverCode.GDKeyboardObjects2.createFrom(runtimeScene.getObjects("Keyboard"));
 {for(var i = 0, len = gdjs.GameOverCode.GDKeyboardObjects2.length ;i < len;++i) {
@@ -375,7 +375,7 @@ gdjs.GameOverCode.eventsList2(runtimeScene);} //End of subevents
 
 gdjs.GameOverCode.condition0IsTrue_0.val = false;
 {
-gdjs.GameOverCode.condition0IsTrue_0.val = gdjs.evtTools.input.popStartedTouch(runtimeScene);
+gdjs.GameOverCode.condition0IsTrue_0.val = gdjs.evtTools.input.isMouseButtonPressed(runtimeScene, "Left");
 }if (gdjs.GameOverCode.condition0IsTrue_0.val) {
 
 { //Subevents
