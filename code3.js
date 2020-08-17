@@ -67,6 +67,18 @@ gdjs.GameOverCode.GDHAPUSObjects1= [];
 gdjs.GameOverCode.GDHAPUSObjects2= [];
 gdjs.GameOverCode.GDHAPUSObjects3= [];
 gdjs.GameOverCode.GDHAPUSObjects4= [];
+gdjs.GameOverCode.GDTombolKeyboardObjects1= [];
+gdjs.GameOverCode.GDTombolKeyboardObjects2= [];
+gdjs.GameOverCode.GDTombolKeyboardObjects3= [];
+gdjs.GameOverCode.GDTombolKeyboardObjects4= [];
+gdjs.GameOverCode.GDTombolKeyboardTextObjects1= [];
+gdjs.GameOverCode.GDTombolKeyboardTextObjects2= [];
+gdjs.GameOverCode.GDTombolKeyboardTextObjects3= [];
+gdjs.GameOverCode.GDTombolKeyboardTextObjects4= [];
+gdjs.GameOverCode.GDTombolHapusObjects1= [];
+gdjs.GameOverCode.GDTombolHapusObjects2= [];
+gdjs.GameOverCode.GDTombolHapusObjects3= [];
+gdjs.GameOverCode.GDTombolHapusObjects4= [];
 
 gdjs.GameOverCode.conditionTrue_0 = {val:false};
 gdjs.GameOverCode.condition0IsTrue_0 = {val:false};
@@ -80,7 +92,7 @@ gdjs.GameOverCode.condition2IsTrue_1 = {val:false};
 gdjs.GameOverCode.condition3IsTrue_1 = {val:false};
 
 
-gdjs.GameOverCode.eventsList0 = function(runtimeScene) {
+gdjs.GameOverCode.mapOfGDgdjs_46GameOverCode_46GDTombolKeyboardTextObjects2Objects = Hashtable.newFrom({"TombolKeyboardText": gdjs.GameOverCode.GDTombolKeyboardTextObjects2});gdjs.GameOverCode.eventsList0 = function(runtimeScene) {
 
 };gdjs.GameOverCode.eventsList1 = function(runtimeScene) {
 
@@ -112,20 +124,36 @@ gdjs.GameOverCode.GDKeyboardObjects2.createFrom(runtimeScene.getObjects("Keyboar
 
 {
 
-gdjs.GameOverCode.GDKeyEntryObjects1.createFrom(runtimeScene.getObjects("KeyEntry"));
-
-for(gdjs.GameOverCode.forEachIndex2 = 0;gdjs.GameOverCode.forEachIndex2 < gdjs.GameOverCode.GDKeyEntryObjects1.length;++gdjs.GameOverCode.forEachIndex2) {
-gdjs.GameOverCode.GDKeyEntryObjects2.length = 0;
 
 
-gdjs.GameOverCode.forEachTemporary2 = gdjs.GameOverCode.GDKeyEntryObjects1[gdjs.GameOverCode.forEachIndex2];
-gdjs.GameOverCode.GDKeyEntryObjects2.push(gdjs.GameOverCode.forEachTemporary2);
-if (true) {
-{for(var i = 0, len = gdjs.GameOverCode.GDKeyEntryObjects2.length ;i < len;++i) {
-    gdjs.GameOverCode.GDKeyEntryObjects2[i].setLayer("Keyboard");
 }
-}{for(var i = 0, len = gdjs.GameOverCode.GDKeyEntryObjects2.length ;i < len;++i) {
-    gdjs.GameOverCode.GDKeyEntryObjects2[i].setString(gdjs.evtTools.string.toUpperCase((gdjs.RuntimeObject.getVariableString(gdjs.GameOverCode.GDKeyEntryObjects2[i].getVariables().getFromIndex(0)))));
+
+
+{
+
+gdjs.GameOverCode.GDTombolKeyboardObjects1.createFrom(runtimeScene.getObjects("TombolKeyboard"));
+
+for(gdjs.GameOverCode.forEachIndex2 = 0;gdjs.GameOverCode.forEachIndex2 < gdjs.GameOverCode.GDTombolKeyboardObjects1.length;++gdjs.GameOverCode.forEachIndex2) {
+gdjs.GameOverCode.GDTombolKeyboardTextObjects2.length = 0;
+
+gdjs.GameOverCode.GDTombolKeyboardObjects2.length = 0;
+
+
+gdjs.GameOverCode.forEachTemporary2 = gdjs.GameOverCode.GDTombolKeyboardObjects1[gdjs.GameOverCode.forEachIndex2];
+gdjs.GameOverCode.GDTombolKeyboardObjects2.push(gdjs.GameOverCode.forEachTemporary2);
+if (true) {
+{for(var i = 0, len = gdjs.GameOverCode.GDTombolKeyboardObjects2.length ;i < len;++i) {
+    gdjs.GameOverCode.GDTombolKeyboardObjects2[i].setLayer("Keyboard");
+}
+}{for(var i = 0, len = gdjs.GameOverCode.GDTombolKeyboardObjects2.length ;i < len;++i) {
+    gdjs.GameOverCode.GDTombolKeyboardObjects2[i].returnVariable(gdjs.GameOverCode.GDTombolKeyboardObjects2[i].getVariables().getFromIndex(0)).setString(gdjs.evtTools.string.toUpperCase((gdjs.RuntimeObject.getVariableString(gdjs.GameOverCode.GDTombolKeyboardObjects2[i].getVariables().getFromIndex(0)))));
+}
+}{gdjs.evtTools.object.createObjectOnScene((typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : runtimeScene), gdjs.GameOverCode.mapOfGDgdjs_46GameOverCode_46GDTombolKeyboardTextObjects2Objects, (( gdjs.GameOverCode.GDTombolKeyboardObjects2.length === 0 ) ? 0 :gdjs.GameOverCode.GDTombolKeyboardObjects2[0].getPointX("")) + 16, (( gdjs.GameOverCode.GDTombolKeyboardObjects2.length === 0 ) ? 0 :gdjs.GameOverCode.GDTombolKeyboardObjects2[0].getPointY("")) + 12, "Keyboard");
+}{for(var i = 0, len = gdjs.GameOverCode.GDTombolKeyboardTextObjects2.length ;i < len;++i) {
+    gdjs.GameOverCode.GDTombolKeyboardTextObjects2[i].setString((gdjs.RuntimeObject.getVariableString(((gdjs.GameOverCode.GDTombolKeyboardObjects2.length === 0 ) ? gdjs.VariablesContainer.badVariablesContainer : gdjs.GameOverCode.GDTombolKeyboardObjects2[0].getVariables()).getFromIndex(0))));
+}
+}{for(var i = 0, len = gdjs.GameOverCode.GDTombolKeyboardTextObjects2.length ;i < len;++i) {
+    gdjs.GameOverCode.GDTombolKeyboardTextObjects2[i].setZOrder((( gdjs.GameOverCode.GDTombolKeyboardObjects2.length === 0 ) ? 0 :gdjs.GameOverCode.GDTombolKeyboardObjects2[0].getZOrder()) + 1);
 }
 }}
 }
@@ -193,7 +221,7 @@ gdjs.GameOverCode.GDDefaultNameObjects2.createFrom(runtimeScene.getObjects("Defa
 }
 
 
-};gdjs.GameOverCode.mapOfGDgdjs_46GameOverCode_46GDKeyEntryObjects2Objects = Hashtable.newFrom({"KeyEntry": gdjs.GameOverCode.GDKeyEntryObjects2});gdjs.GameOverCode.mapOfGDgdjs_46GameOverCode_46GDHAPUSObjects1Objects = Hashtable.newFrom({"HAPUS": gdjs.GameOverCode.GDHAPUSObjects1});gdjs.GameOverCode.eventsList3 = function(runtimeScene) {
+};gdjs.GameOverCode.mapOfGDgdjs_46GameOverCode_46GDKeyEntryObjects2Objects = Hashtable.newFrom({"KeyEntry": gdjs.GameOverCode.GDKeyEntryObjects2});gdjs.GameOverCode.mapOfGDgdjs_46GameOverCode_46GDHAPUSObjects2Objects = Hashtable.newFrom({"HAPUS": gdjs.GameOverCode.GDHAPUSObjects2});gdjs.GameOverCode.mapOfGDgdjs_46GameOverCode_46GDTombolHapusObjects2Objects = Hashtable.newFrom({"TombolHapus": gdjs.GameOverCode.GDTombolHapusObjects2});gdjs.GameOverCode.mapOfGDgdjs_46GameOverCode_46GDTombolKeyboardObjects1Objects = Hashtable.newFrom({"TombolKeyboard": gdjs.GameOverCode.GDTombolKeyboardObjects1});gdjs.GameOverCode.eventsList3 = function(runtimeScene) {
 
 {
 
@@ -215,15 +243,50 @@ gdjs.GameOverCode.GDKeyboardObjects2.createFrom(runtimeScene.getObjects("Keyboar
 
 {
 
-gdjs.GameOverCode.GDHAPUSObjects1.createFrom(runtimeScene.getObjects("HAPUS"));
+gdjs.GameOverCode.GDHAPUSObjects2.createFrom(runtimeScene.getObjects("HAPUS"));
 
 gdjs.GameOverCode.condition0IsTrue_0.val = false;
 {
-gdjs.GameOverCode.condition0IsTrue_0.val = gdjs.evtTools.input.cursorOnObject(gdjs.GameOverCode.mapOfGDgdjs_46GameOverCode_46GDHAPUSObjects1Objects, runtimeScene, true, false);
+gdjs.GameOverCode.condition0IsTrue_0.val = gdjs.evtTools.input.cursorOnObject(gdjs.GameOverCode.mapOfGDgdjs_46GameOverCode_46GDHAPUSObjects2Objects, runtimeScene, true, false);
+}if (gdjs.GameOverCode.condition0IsTrue_0.val) {
+gdjs.GameOverCode.GDKeyboardObjects2.createFrom(runtimeScene.getObjects("Keyboard"));
+{for(var i = 0, len = gdjs.GameOverCode.GDKeyboardObjects2.length ;i < len;++i) {
+    gdjs.GameOverCode.GDKeyboardObjects2[i].setString(gdjs.evtTools.string.subStr((gdjs.GameOverCode.GDKeyboardObjects2[i].getString()), 0, gdjs.evtTools.string.strLen((gdjs.GameOverCode.GDKeyboardObjects2[i].getString())) - 1));
+}
+}}
+
+}
+
+
+{
+
+gdjs.GameOverCode.GDTombolHapusObjects2.createFrom(runtimeScene.getObjects("TombolHapus"));
+
+gdjs.GameOverCode.condition0IsTrue_0.val = false;
+{
+gdjs.GameOverCode.condition0IsTrue_0.val = gdjs.evtTools.input.cursorOnObject(gdjs.GameOverCode.mapOfGDgdjs_46GameOverCode_46GDTombolHapusObjects2Objects, runtimeScene, true, false);
+}if (gdjs.GameOverCode.condition0IsTrue_0.val) {
+gdjs.GameOverCode.GDKeyboardObjects2.createFrom(runtimeScene.getObjects("Keyboard"));
+{for(var i = 0, len = gdjs.GameOverCode.GDKeyboardObjects2.length ;i < len;++i) {
+    gdjs.GameOverCode.GDKeyboardObjects2[i].setString(gdjs.evtTools.string.subStr((gdjs.GameOverCode.GDKeyboardObjects2[i].getString()), 0, gdjs.evtTools.string.strLen((gdjs.GameOverCode.GDKeyboardObjects2[i].getString())) - 1));
+}
+}}
+
+}
+
+
+{
+
+gdjs.GameOverCode.GDTombolKeyboardObjects1.createFrom(runtimeScene.getObjects("TombolKeyboard"));
+
+gdjs.GameOverCode.condition0IsTrue_0.val = false;
+{
+gdjs.GameOverCode.condition0IsTrue_0.val = gdjs.evtTools.input.cursorOnObject(gdjs.GameOverCode.mapOfGDgdjs_46GameOverCode_46GDTombolKeyboardObjects1Objects, runtimeScene, true, false);
 }if (gdjs.GameOverCode.condition0IsTrue_0.val) {
 gdjs.GameOverCode.GDKeyboardObjects1.createFrom(runtimeScene.getObjects("Keyboard"));
+/* Reuse gdjs.GameOverCode.GDTombolKeyboardObjects1 */
 {for(var i = 0, len = gdjs.GameOverCode.GDKeyboardObjects1.length ;i < len;++i) {
-    gdjs.GameOverCode.GDKeyboardObjects1[i].setString(gdjs.evtTools.string.subStr((gdjs.GameOverCode.GDKeyboardObjects1[i].getString()), 0, gdjs.evtTools.string.strLen((gdjs.GameOverCode.GDKeyboardObjects1[i].getString())) - 1));
+    gdjs.GameOverCode.GDKeyboardObjects1[i].setString(gdjs.GameOverCode.GDKeyboardObjects1[i].getString() + ((gdjs.RuntimeObject.getVariableString(((gdjs.GameOverCode.GDTombolKeyboardObjects1.length === 0 ) ? gdjs.VariablesContainer.badVariablesContainer : gdjs.GameOverCode.GDTombolKeyboardObjects1[0].getVariables()).getFromIndex(0)))));
 }
 }}
 
@@ -273,7 +336,7 @@ gdjs.GameOverCode.condition1IsTrue_0.val = gdjs.evtTools.input.isMouseButtonPres
 }if ( gdjs.GameOverCode.condition1IsTrue_0.val ) {
 {
 {gdjs.GameOverCode.conditionTrue_1 = gdjs.GameOverCode.condition2IsTrue_0;
-gdjs.GameOverCode.conditionTrue_1.val = runtimeScene.getOnceTriggers().triggerOnce(8330012);
+gdjs.GameOverCode.conditionTrue_1.val = runtimeScene.getOnceTriggers().triggerOnce(8866484);
 }
 }}
 }
@@ -286,7 +349,7 @@ gdjs.GameOverCode.eventsList3(runtimeScene);} //End of subevents
 }
 
 
-};gdjs.GameOverCode.mapOfGDgdjs_46GameOverCode_46GDOkButtonObjects3Objects = Hashtable.newFrom({"OkButton": gdjs.GameOverCode.GDOkButtonObjects3});gdjs.GameOverCode.userFunc0x6b5e00 = function(runtimeScene) {
+};gdjs.GameOverCode.mapOfGDgdjs_46GameOverCode_46GDOkButtonObjects3Objects = Hashtable.newFrom({"OkButton": gdjs.GameOverCode.GDOkButtonObjects3});gdjs.GameOverCode.userFunc0x769d90 = function(runtimeScene) {
 "use strict";
 
 var playerName = runtimeScene.getVariables().get("JS_NameToSend").getAsString();
@@ -328,7 +391,7 @@ gdjs.GameOverCode.eventsList5 = function(runtimeScene) {
 {
 
 
-gdjs.GameOverCode.userFunc0x6b5e00(runtimeScene);
+gdjs.GameOverCode.userFunc0x769d90(runtimeScene);
 
 }
 
@@ -528,7 +591,12 @@ gdjs.GameOverCode.eventsList8(runtimeScene);
 
 {
 gdjs.GameOverCode.GDKeyboardObjects1.createFrom(runtimeScene.getObjects("Keyboard"));
-{gdjs.evtTools.camera.centerCamera(runtimeScene, (gdjs.GameOverCode.GDKeyboardObjects1.length !== 0 ? gdjs.GameOverCode.GDKeyboardObjects1[0] : null), true, "", 0);
+{gdjs.evtTools.camera.centerCamera(runtimeScene, (gdjs.GameOverCode.GDKeyboardObjects1.length !== 0 ? gdjs.GameOverCode.GDKeyboardObjects1[0] : null), true, "Keyboard", 0);
+}{gdjs.evtTools.camera.centerCamera(runtimeScene, (gdjs.GameOverCode.GDKeyboardObjects1.length !== 0 ? gdjs.GameOverCode.GDKeyboardObjects1[0] : null), true, "Keyboard", 0);
+}{gdjs.evtTools.camera.setCameraX(runtimeScene, 360, "Keyboard", 0);
+}{gdjs.evtTools.camera.setCameraX(runtimeScene, 360, "", 0);
+}{gdjs.evtTools.camera.setCameraY(runtimeScene, 640, "Keyboard", 0);
+}{gdjs.evtTools.camera.setCameraY(runtimeScene, 640, "", 0);
 }}
 
 }
@@ -614,6 +682,18 @@ gdjs.GameOverCode.GDHAPUSObjects1.length = 0;
 gdjs.GameOverCode.GDHAPUSObjects2.length = 0;
 gdjs.GameOverCode.GDHAPUSObjects3.length = 0;
 gdjs.GameOverCode.GDHAPUSObjects4.length = 0;
+gdjs.GameOverCode.GDTombolKeyboardObjects1.length = 0;
+gdjs.GameOverCode.GDTombolKeyboardObjects2.length = 0;
+gdjs.GameOverCode.GDTombolKeyboardObjects3.length = 0;
+gdjs.GameOverCode.GDTombolKeyboardObjects4.length = 0;
+gdjs.GameOverCode.GDTombolKeyboardTextObjects1.length = 0;
+gdjs.GameOverCode.GDTombolKeyboardTextObjects2.length = 0;
+gdjs.GameOverCode.GDTombolKeyboardTextObjects3.length = 0;
+gdjs.GameOverCode.GDTombolKeyboardTextObjects4.length = 0;
+gdjs.GameOverCode.GDTombolHapusObjects1.length = 0;
+gdjs.GameOverCode.GDTombolHapusObjects2.length = 0;
+gdjs.GameOverCode.GDTombolHapusObjects3.length = 0;
+gdjs.GameOverCode.GDTombolHapusObjects4.length = 0;
 
 gdjs.GameOverCode.eventsList10(runtimeScene);
 return;
