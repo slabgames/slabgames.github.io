@@ -173,7 +173,7 @@ gdjs.GameOverCode.GDDefaultNameObjects1.createFrom(runtimeScene.getObjects("Defa
 }
 
 
-};gdjs.GameOverCode.mapOfGDgdjs_46GameOverCode_46GDOkButtonObjects2Objects = Hashtable.newFrom({"OkButton": gdjs.GameOverCode.GDOkButtonObjects2});gdjs.GameOverCode.userFunc0x6cfff0 = function(runtimeScene) {
+};gdjs.GameOverCode.mapOfGDgdjs_46GameOverCode_46GDOkButtonObjects2Objects = Hashtable.newFrom({"OkButton": gdjs.GameOverCode.GDOkButtonObjects2});gdjs.GameOverCode.userFunc0x72aae8 = function(runtimeScene) {
 "use strict";
 
 var playerName = runtimeScene.getVariables().get("JS_NameToSend").getAsString();
@@ -215,7 +215,7 @@ gdjs.GameOverCode.eventsList3 = function(runtimeScene) {
 {
 
 
-gdjs.GameOverCode.userFunc0x6cfff0(runtimeScene);
+gdjs.GameOverCode.userFunc0x72aae8(runtimeScene);
 
 }
 
