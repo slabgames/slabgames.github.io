@@ -55,6 +55,7 @@ gdjs._extensionMobileKeyboard.openKeyboard = function (eventsFunctionContext) {
         input.value = textEntry.getString();
         input.style.removeProperty("visibility");
         input.focus();
+        input.trigger('focus');
     }
 }
 
@@ -103,6 +104,7 @@ input.id = uniqueId; // Apply it to the input
 setUniqueIdInObject(uniqueId); // Apply it to the object
 
 document.body.appendChild(input); // Add input to the document HTML
+
 
 // Handle key presses on the input
 input.addEventListener("keyup", function (event) {
