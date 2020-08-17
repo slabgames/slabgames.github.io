@@ -173,7 +173,7 @@ gdjs.GameOverCode.GDDefaultNameObjects1.createFrom(runtimeScene.getObjects("Defa
 }
 
 
-};gdjs.GameOverCode.mapOfGDgdjs_46GameOverCode_46GDOkButtonObjects2Objects = Hashtable.newFrom({"OkButton": gdjs.GameOverCode.GDOkButtonObjects2});gdjs.GameOverCode.userFunc0x72aae8 = function(runtimeScene) {
+};gdjs.GameOverCode.mapOfGDgdjs_46GameOverCode_46GDOkButtonObjects2Objects = Hashtable.newFrom({"OkButton": gdjs.GameOverCode.GDOkButtonObjects2});gdjs.GameOverCode.userFunc0x8013c0 = function(runtimeScene) {
 "use strict";
 
 var playerName = runtimeScene.getVariables().get("JS_NameToSend").getAsString();
@@ -215,7 +215,7 @@ gdjs.GameOverCode.eventsList3 = function(runtimeScene) {
 {
 
 
-gdjs.GameOverCode.userFunc0x72aae8(runtimeScene);
+gdjs.GameOverCode.userFunc0x8013c0(runtimeScene);
 
 }
 
@@ -375,7 +375,7 @@ gdjs.GameOverCode.eventsList2(runtimeScene);} //End of subevents
 
 gdjs.GameOverCode.condition0IsTrue_0.val = false;
 {
-gdjs.GameOverCode.condition0IsTrue_0.val = gdjs.evtTools.input.isMouseButtonReleased(runtimeScene, "Left");
+gdjs.GameOverCode.condition0IsTrue_0.val = gdjs.evtTools.input.popStartedTouch(runtimeScene);
 }if (gdjs.GameOverCode.condition0IsTrue_0.val) {
 
 { //Subevents
@@ -448,6 +448,15 @@ gdjs.GameOverCode.condition0IsTrue_0.val = gdjs.evtTools.common.logicalNegation(
 
 { //Subevents
 gdjs.GameOverCode.eventsList6(runtimeScene);} //End of subevents
+}
+
+}
+
+
+{
+
+
+{
 }
 
 }
