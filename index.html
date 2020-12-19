@@ -13,17 +13,26 @@
 			border: 0 none;
 			padding: 0;
 			text-align: center;
-			background-color: black;
+			background-color: #fcffea;
+			background-image: url("bg_hd.jpg");
+			background-repeat: no-repeat;
+			background-position: center;
 		}
 
 		#canvas {
-			display: block;
+			/*display: block;*/
 			margin: 0;
+			border: 0 none;
+			padding: 0;
 			color: white;
+			text-align: center;
+			position: relative;
 		}
 
 		#canvas:focus {
 			outline: none;
+			text-align: center;
+			position: relative;
 		}
 
 		.godot {
@@ -115,7 +124,7 @@
 
 </head>
 <body>
-	<canvas id='canvas'>
+	<canvas id='canvas' >
 		HTML5 canvas appears to be unsupported in the current browser.<br />
 		Please try updating or use a different browser.
 	</canvas>
@@ -135,6 +144,8 @@
 	</div>
 
 	<script type='text/javascript' src='kkm.js'></script>
+	<script type="text/javascript" src="pako_inflate.min.js"></script>
+	<script src="//game-cdn.poki.com/scripts/v2/poki-sdk.js"></script>
 	<script type='text/javascript'>//<![CDATA[
 
 		var engine = new Engine;
@@ -145,9 +156,7 @@
 
 			const EXECUTABLE_NAME = 'kkm';
 			const MAIN_PACK = 'kkm.pck';
-			const GDNATIVE_LIBS = [$GODOT_GDNATIVE_LIBS];
 			const INDETERMINATE_STATUS_STEP_MS = 100;
-			const FULL_WINDOW = $GODOT_FULL_WINDOW;
 
 			var canvas = document.getElementById('canvas');
 			var statusProgress = document.getElementById('status-progress');
@@ -157,9 +166,6 @@
 
 			var initializing = true;
 			var statusMode = 'hidden';
-			var lastWidth = 0;
-			var lastHeight = 0;
-			var lastScale = 0;
 
 			var animationCallbacks = [];
 			function animate(time) {
@@ -169,23 +175,18 @@
 			requestAnimationFrame(animate);
 
 			function adjustCanvasDimensions() {
-				const scale = window.devicePixelRatio || 1;
-				if (lastWidth != window.innerWidth || lastHeight != window.innerHeight || lastScale != scale) {
-					lastScale = scale;
-					lastWidth = window.innerWidth;
-					lastHeight = window.innerHeight;
-					canvas.width = Math.floor(lastWidth * scale);
-					canvas.height = Math.floor(lastHeight * scale);
-					canvas.style.width = lastWidth + "px";
-					canvas.style.height = lastHeight + "px";
-				}
+				var scale = window.devicePixelRatio || 1;
+				// var width = window.innerWidth;
+				// var height = window.innerHeight;
+				var width = 380;
+				var height = 640;
+				canvas.width = width * scale;
+				canvas.height = height * scale;
+				canvas.style.width = width + "px";
+				canvas.style.height = height + "px";
 			}
-			if (FULL_WINDOW) {
-				animationCallbacks.push(adjustCanvasDimensions);
-				adjustCanvasDimensions();
-			} else {
-				engine.setCanvasResizedOnStart(true);
-			}
+			animationCallbacks.push(adjustCanvasDimensions);
+			adjustCanvasDimensions();
 
 			setStatusMode = function setStatusMode(mode) {
 
@@ -268,7 +269,6 @@
 			} else {
 				setStatusMode('indeterminate');
 				engine.setCanvas(canvas);
-				engine.setGDNativeLibraries(GDNATIVE_LIBS);
 				engine.startGame(EXECUTABLE_NAME, MAIN_PACK).then(() => {
 					setStatusMode('hidden');
 					initializing = false;
