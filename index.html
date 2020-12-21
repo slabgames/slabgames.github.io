@@ -166,11 +166,7 @@
 			    }   
 			);
 			PokiSDK.setDebug(true);
-			function animate(time) {
-				animationCallbacks.forEach(callback => callback(time));
-				requestAnimationFrame(animate);
-			}
-			requestAnimationFrame(animate);
+			
 
 			function continueToGame() {
 
@@ -188,7 +184,11 @@
 			var statusMode = 'hidden';
 
 			var animationCallbacks = [];
-
+			function animate(time) {
+				animationCallbacks.forEach(callback => callback(time));
+				requestAnimationFrame(animate);
+			}
+			requestAnimationFrame(animate);
 			
 
 			function adjustCanvasDimensions() {
