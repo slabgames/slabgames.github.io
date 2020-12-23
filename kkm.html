@@ -13,26 +13,17 @@
 			border: 0 none;
 			padding: 0;
 			text-align: center;
-			background-color: #fcffea;
-			background-image: url("bg_hd.jpg");
-			background-repeat: no-repeat;
-			background-position: center;
+			background-color: black;
 		}
 
 		#canvas {
-			/*display: block;*/
+			display: block;
 			margin: 0;
-			border: 0 none;
-			padding: 0;
 			color: white;
-			text-align: center;
-			position: relative;
 		}
 
 		#canvas:focus {
 			outline: none;
-			text-align: center;
-			position: relative;
 		}
 
 		.godot {
@@ -121,10 +112,11 @@
 			visibility: visible;
 		}
 	</style>
-
+<script type="text/javascript" src="pako_inflate.min.js"></script>
+<!--<script src="//game-cdn.poki.com/scripts/v2/poki-sdk.js"></script> -->
 </head>
 <body>
-	<canvas id='canvas' >
+	<canvas id='canvas'>
 		HTML5 canvas appears to be unsupported in the current browser.<br />
 		Please try updating or use a different browser.
 	</canvas>
@@ -144,35 +136,19 @@
 	</div>
 
 	<script type='text/javascript' src='kkm.js'></script>
-	<script type="text/javascript" src="pako_inflate.min.js"></script>
-	<script src="//game-cdn.poki.com/scripts/v2/poki-sdk.js"></script>
 	<script type='text/javascript'>//<![CDATA[
 
 		var engine = new Engine;
 		var setStatusMode;
 		var setStatusNotice;
-		(function () {
-			// PokiSDK.init().then(
-			//     () => {
-			//         console.log("Poki SDK successfully initialized");
-			//         // your code to continue to game
-			//         continueToGame();
-			//     }   
-			// ).catch(
-			//     () => {
-			//         console.log("Initialized, but the user likely has adblock");
-			//         // your code to continue to game
-			//         continueToGame();
-			//     }   
-			// );
-			// PokiSDK.setDebug(true);
-			continueToGame();
 
-			function continueToGame() {
+		(function() {
 
 			const EXECUTABLE_NAME = 'kkm';
 			const MAIN_PACK = 'kkm.pck';
+			const GDNATIVE_LIBS = [];
 			const INDETERMINATE_STATUS_STEP_MS = 100;
+			const FULL_WINDOW = true;
 
 			var canvas = document.getElementById('canvas');
 			var statusProgress = document.getElementById('status-progress');
@@ -192,16 +168,9 @@
 				requestAnimationFrame(animate);
 			}
 			requestAnimationFrame(animate);
-			
 
 			function adjustCanvasDimensions() {
-				var scale = window.devicePixelRatio || 1;
-				// var width = 360;
-				// var height = 640;
-				// canvas.width = width * scale;
-				// canvas.height = height * scale;
-				// canvas.style.width = width + "px";
-				// canvas.style.height = height + "px";
+				const scale = window.devicePixelRatio || 1;
 				if (lastWidth != window.innerWidth || lastHeight != window.innerHeight || lastScale != scale) {
 					lastScale = scale;
 					lastWidth = window.innerWidth;
@@ -212,8 +181,12 @@
 					canvas.style.height = lastHeight + "px";
 				}
 			}
-			animationCallbacks.push(adjustCanvasDimensions);
-			adjustCanvasDimensions();
+			if (FULL_WINDOW) {
+				animationCallbacks.push(adjustCanvasDimensions);
+				adjustCanvasDimensions();
+			} else {
+				engine.setCanvasResizedOnStart(true);
+			}
 
 			setStatusMode = function setStatusMode(mode) {
 
@@ -296,16 +269,14 @@
 			} else {
 				setStatusMode('indeterminate');
 				engine.setCanvas(canvas);
+				engine.setGDNativeLibraries(GDNATIVE_LIBS);
 				engine.startGame(EXECUTABLE_NAME, MAIN_PACK).then(() => {
 					setStatusMode('hidden');
 					initializing = false;
 				}, displayFailureNotice);
 			}
-		}
 		})();
-		
 	//]]></script>
 </body>
 </html>
-
 
