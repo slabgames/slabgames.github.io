@@ -112,8 +112,8 @@
 			visibility: visible;
 		}
 	</style>
-<script type="text/javascript" src="pako_inflate.min.js"></script>
-<!--<script src="//game-cdn.poki.com/scripts/v2/poki-sdk.js"></script> -->
+	<script type="text/javascript" src="pako_inflate.min.js"></script>
+	<script type="text/javascript" src="//game-cdn.poki.com/scripts/v2/poki-sdk.js"></script> 
 </head>
 <body>
 	<canvas id='canvas'>
@@ -143,140 +143,160 @@
 		var setStatusNotice;
 
 		(function() {
+			PokiSDK.init().then(
+			    () => {
+			        console.log("Poki SDK successfully initialized");
+			        // your code to continue to game
+			        continueToGame();
+			    }   
+			).catch(
+			    () => {
+			        console.log("Initialized, but the user likely has adblock");
+			        // your code to continue to game
+			        PokiSDK.gameLoadingStart();	
+			        continueToGame();
+			    }   
+			);
+			PokiSDK.setDebug(true);
 
-			const EXECUTABLE_NAME = 'kkm';
-			const MAIN_PACK = 'kkm.pck';
-			const GDNATIVE_LIBS = [];
-			const INDETERMINATE_STATUS_STEP_MS = 100;
-			const FULL_WINDOW = true;
+			
+			function continueToGame() {
+				const EXECUTABLE_NAME = 'kkm';
+				const MAIN_PACK = 'kkm.pck';
+				const GDNATIVE_LIBS = [];
+				const INDETERMINATE_STATUS_STEP_MS = 100;
+				const FULL_WINDOW = true;
 
-			var canvas = document.getElementById('canvas');
-			var statusProgress = document.getElementById('status-progress');
-			var statusProgressInner = document.getElementById('status-progress-inner');
-			var statusIndeterminate = document.getElementById('status-indeterminate');
-			var statusNotice = document.getElementById('status-notice');
+				var canvas = document.getElementById('canvas');
+				var statusProgress = document.getElementById('status-progress');
+				var statusProgressInner = document.getElementById('status-progress-inner');
+				var statusIndeterminate = document.getElementById('status-indeterminate');
+				var statusNotice = document.getElementById('status-notice');
 
-			var initializing = true;
-			var statusMode = 'hidden';
-			var lastWidth = 0;
-			var lastHeight = 0;
-			var lastScale = 0;
+				var initializing = true;
+				var statusMode = 'hidden';
+				var lastWidth = 0;
+				var lastHeight = 0;
+				var lastScale = 0;
 
-			var animationCallbacks = [];
-			function animate(time) {
-				animationCallbacks.forEach(callback => callback(time));
+				var animationCallbacks = [];
+				function animate(time) {
+					animationCallbacks.forEach(callback => callback(time));
+					requestAnimationFrame(animate);
+				}
 				requestAnimationFrame(animate);
-			}
-			requestAnimationFrame(animate);
 
-			function adjustCanvasDimensions() {
-				const scale = window.devicePixelRatio || 1;
-				if (lastWidth != window.innerWidth || lastHeight != window.innerHeight || lastScale != scale) {
-					lastScale = scale;
-					lastWidth = window.innerWidth;
-					lastHeight = window.innerHeight;
-					canvas.width = Math.floor(lastWidth * scale);
-					canvas.height = Math.floor(lastHeight * scale);
-					canvas.style.width = lastWidth + "px";
-					canvas.style.height = lastHeight + "px";
-				}
-			}
-			if (FULL_WINDOW) {
-				animationCallbacks.push(adjustCanvasDimensions);
-				adjustCanvasDimensions();
-			} else {
-				engine.setCanvasResizedOnStart(true);
-			}
-
-			setStatusMode = function setStatusMode(mode) {
-
-				if (statusMode === mode || !initializing)
-					return;
-				[statusProgress, statusIndeterminate, statusNotice].forEach(elem => {
-					elem.style.display = 'none';
-				});
-				animationCallbacks = animationCallbacks.filter(function(value) {
-					return (value != animateStatusIndeterminate);
-				});
-				switch (mode) {
-					case 'progress':
-						statusProgress.style.display = 'block';
-						break;
-					case 'indeterminate':
-						statusIndeterminate.style.display = 'block';
-						animationCallbacks.push(animateStatusIndeterminate);
-						break;
-					case 'notice':
-						statusNotice.style.display = 'block';
-						break;
-					case 'hidden':
-						break;
-					default:
-						throw new Error('Invalid status mode');
-				}
-				statusMode = mode;
-			}
-
-			function animateStatusIndeterminate(ms) {
-
-				var i = Math.floor(ms / INDETERMINATE_STATUS_STEP_MS % 8);
-				if (statusIndeterminate.children[i].style.borderTopColor == '') {
-					Array.prototype.slice.call(statusIndeterminate.children).forEach(child => {
-						child.style.borderTopColor = '';
-					});
-					statusIndeterminate.children[i].style.borderTopColor = '#dfdfdf';
-				}
-			}
-
-			setStatusNotice = function setStatusNotice(text) {
-
-				while (statusNotice.lastChild) {
-					statusNotice.removeChild(statusNotice.lastChild);
-				}
-				var lines = text.split('\n');
-				lines.forEach((line) => {
-					statusNotice.appendChild(document.createTextNode(line));
-					statusNotice.appendChild(document.createElement('br'));
-				});
-			};
-
-			engine.setProgressFunc((current, total) => {
-
-				if (total > 0) {
-					statusProgressInner.style.width = current/total * 100 + '%';
-					setStatusMode('progress');
-					if (current === total) {
-						// wait for progress bar animation
-						setTimeout(() => {
-							setStatusMode('indeterminate');
-						}, 500);
+				function adjustCanvasDimensions() {
+					const scale = window.devicePixelRatio || 1;
+					if (lastWidth != window.innerWidth || lastHeight != window.innerHeight || lastScale != scale) {
+						lastScale = scale;
+						lastWidth = window.innerWidth;
+						lastHeight = window.innerHeight;
+						canvas.width = Math.floor(lastWidth * scale);
+						canvas.height = Math.floor(lastHeight * scale);
+						canvas.style.width = lastWidth + "px";
+						canvas.style.height = lastHeight + "px";
 					}
+				}
+				if (FULL_WINDOW) {
+					animationCallbacks.push(adjustCanvasDimensions);
+					adjustCanvasDimensions();
+				} else {
+					engine.setCanvasResizedOnStart(true);
+				}
+
+				setStatusMode = function setStatusMode(mode) {
+
+					if (statusMode === mode || !initializing)
+						return;
+					[statusProgress, statusIndeterminate, statusNotice].forEach(elem => {
+						elem.style.display = 'none';
+					});
+					animationCallbacks = animationCallbacks.filter(function(value) {
+						return (value != animateStatusIndeterminate);
+					});
+					switch (mode) {
+						case 'progress':
+							statusProgress.style.display = 'block';
+							break;
+						case 'indeterminate':
+							statusIndeterminate.style.display = 'block';
+							animationCallbacks.push(animateStatusIndeterminate);
+							break;
+						case 'notice':
+							statusNotice.style.display = 'block';
+							break;
+						case 'hidden':
+							break;
+						default:
+							throw new Error('Invalid status mode');
+					}
+					statusMode = mode;
+				}
+
+				function animateStatusIndeterminate(ms) {
+
+					var i = Math.floor(ms / INDETERMINATE_STATUS_STEP_MS % 8);
+					if (statusIndeterminate.children[i].style.borderTopColor == '') {
+						Array.prototype.slice.call(statusIndeterminate.children).forEach(child => {
+							child.style.borderTopColor = '';
+						});
+						statusIndeterminate.children[i].style.borderTopColor = '#dfdfdf';
+					}
+				}
+
+				setStatusNotice = function setStatusNotice(text) {
+
+					while (statusNotice.lastChild) {
+						statusNotice.removeChild(statusNotice.lastChild);
+					}
+					var lines = text.split('\n');
+					lines.forEach((line) => {
+						statusNotice.appendChild(document.createTextNode(line));
+						statusNotice.appendChild(document.createElement('br'));
+					});
+				};
+
+				engine.setProgressFunc((current, total) => {
+
+					if (total > 0) {
+						statusProgressInner.style.width = current/total * 100 + '%';
+						setStatusMode('progress');
+						if (current === total) {
+							// wait for progress bar animation
+							setTimeout(() => {
+								setStatusMode('indeterminate');
+							}, 500);
+							PokiSDK.gameLoadingFinished();
+						}
+					} else {
+						setStatusMode('indeterminate');
+					}
+				});
+
+				function displayFailureNotice(err) {
+					var msg = err.message || err;
+					console.error(msg);
+					setStatusNotice(msg);
+					setStatusMode('notice');
+					initializing = false;
+				};
+
+				if (!Engine.isWebGLAvailable()) {
+					displayFailureNotice('WebGL not available');
 				} else {
 					setStatusMode('indeterminate');
+					engine.setCanvas(canvas);
+					engine.setGDNativeLibraries(GDNATIVE_LIBS);
+					engine.startGame(EXECUTABLE_NAME, MAIN_PACK).then(() => {
+						setStatusMode('hidden');
+						initializing = false;
+					}, displayFailureNotice);
 				}
-			});
-
-			function displayFailureNotice(err) {
-				var msg = err.message || err;
-				console.error(msg);
-				setStatusNotice(msg);
-				setStatusMode('notice');
-				initializing = false;
-			};
-
-			if (!Engine.isWebGLAvailable()) {
-				displayFailureNotice('WebGL not available');
-			} else {
-				setStatusMode('indeterminate');
-				engine.setCanvas(canvas);
-				engine.setGDNativeLibraries(GDNATIVE_LIBS);
-				engine.startGame(EXECUTABLE_NAME, MAIN_PACK).then(() => {
-					setStatusMode('hidden');
-					initializing = false;
-				}, displayFailureNotice);
 			}
 		})();
 	//]]></script>
 </body>
 </html>
+
 
