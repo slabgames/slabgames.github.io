@@ -1,38 +1,14 @@
-.bg {
-  position: relative;
-  text-align: center; 
-  justify-content: center;
-  background-image: url("bg_hd.jpg");
-  background-repeat: no-repeat;   
-  display: block;
-  width: 1137px;
-  height: 640px;
-  background-position: center;
-  max-width: 1137px;
-  max-height: 640px;
-  margin: 0px auto;
-  border: 0px;
-  overflow: hidden;
-  padding:0px;
-}
 
-body {
-  background-color: #fcffea;
-  overflow: hidden;
-  padding:0;
-  margin:0px;
-  display: block;
+.bg {
+ background-image: url("bg_hd.jpg");
+ background-position: center;
+ background-size: cover;     //  ("contain" works better than "cover" in certain cases)
 }
 
 #game {
-  justify-content: center;
-  padding: 0; 
-  border:0px; 
-  overflow:hidden; 
-  text-align: center; 
-  display: block; 
-  margin: 0 auto;
-  width: 360px;
-  height: 640px;
-  resize: none;
+ min-height: 100vh;
+ display: block;
+ margin: 0 auto;
+ overflow: hidden;
+ border: 0px;
 }
