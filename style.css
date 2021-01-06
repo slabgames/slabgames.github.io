@@ -1,45 +1,30 @@
 .bg {
-  /*position: relative;*/
+  position: relative;
   text-align: center; 
   justify-content: center;
   background-image: url("bg_hd.jpg");
-  background-repeat: no-repeat;
-/*  width: 1137px;
-  height: 640px;*/
+  background-repeat: no-repeat;   
+  display: block;
+  width: 1137px;
+  height: 640px;
   background-position: center;
-  /*margin:0px;*/
-  /*border: 0px;*/
-  /*max-width:1030px;*/
-  /*height: 100%;*/
-  width: auto;
-  height: auto;
   max-width: 1137px;
   max-height: 640px;
-  /*max-width: 100%;*/
-  /*padding-top: 56.25%; */
-  /*padding-top: 100%;*/
-  /*display: block;*/
-  /*max-width: 100vh;*/
-  /*max-height: 100%;*/
-  /*width: 100vmin;*/
-  /*height: 100vmin;*/
-  /*height: 100vh;*/
-  /*width: 200vh;*/
-  /*margin: 0 auto;*/
-  /*overflow: hidden;*/
+  margin: 0px auto;
+  border: 0px;
+  overflow: hidden;
+  padding:0px;
 }
 
-.container {
-  max-width: 100vh;
-  max-height: 100%;
-  margin: 0 auto;
-  overflow: hidden;
-}
 body {
   background-color: #fcffea;
+  overflow: hidden;
+  padding:0;
+  margin:0px;
+  display: block;
 }
 
-iframe {
+#game {
   justify-content: center;
   padding: 0; 
   border:0px; 
@@ -50,10 +35,4 @@ iframe {
   width: 360px;
   height: 640px;
   resize: none;
-  /*max-height: 100%;*/
 }
-/*img {
-  z-index: -1; 
-  text-align:center;
-  max-width: 100%;
-}*/
