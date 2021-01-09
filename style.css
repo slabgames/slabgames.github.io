@@ -8,6 +8,7 @@
 #game {
  min-height: 100vh;
  min-width: 31vw;
+ max-width: 31vw;
  display: block;
  margin: 0 auto;
  overflow: hidden;
