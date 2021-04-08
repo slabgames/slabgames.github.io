@@ -10,6 +10,7 @@
 		#canvas {
 			/*position: fixed;*/
 			min-height: 100vh;
+			/*min-height: -webkit-fill-available;*/
 			max-height: 100vh;
 			min-width: 33.7vw;
 			max-width: 33.7vw;
@@ -60,11 +61,13 @@
 			padding: 0;
 			text-align: center;
 			background-color: black;
+			min-height: 100vh;
+ 			min-height: -webkit-fill-available;
 		}
 
 		html {
 			width: 100%;
-			height: 100%;
+			height: -webkit-fill-available;
 		}
 
 		#canvas:focus {
@@ -170,6 +173,7 @@
 	</style>
 <!-- <script type="text/javascript" src="pako_inflate.min.js"></script> -->
 <script src="//game-cdn.poki.com/scripts/v2/poki-sdk.js"></script> 
+<script type="text/javascript" src="sitelock.js"></script>
 </head>
 <body>
 	<div class="bg" >	
