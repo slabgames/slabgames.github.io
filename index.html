@@ -8,10 +8,7 @@
 	<style type='text/css'>
 
 		#canvas {
-			/*position: fixed;*/
-			min-height: 100vh;
-			/*min-height: -webkit-fill-available;*/
-			max-height: 100vh;
+			height: 100%;
 			min-width: 33.7vw;
 			max-width: 33.7vw;
 			display: block;
@@ -61,13 +58,12 @@
 			padding: 0;
 			text-align: center;
 			background-color: black;
-			min-height: 100vh;
- 			min-height: -webkit-fill-available;
+			height: 100%;
 		}
 
 		html {
 			width: 100%;
-			height: -webkit-fill-available;
+			height: 100%;
 		}
 
 		#canvas:focus {
@@ -199,6 +195,14 @@
 
 	<script type='text/javascript' src='kkm.js'></script>
 	<script type='text/javascript'>//<![CDATA[
+		function resetHeight(){
+		    // reset the body height to that of the inner browser
+		    document.body.style.height = window.innerHeight + "px";
+		}
+		// reset the height whenever the window's resized
+		window.addEventListener("resize", resetHeight);
+		// called to initially set the height.
+		resetHeight();
 
 		const GODOT_CONFIG = {"args":[],"canvasResizePolicy":1,"executable":"kkm","experimentalVK":false,"fileSizes":{"kkm.pck":13659792,"kkm.wasm":9851508},"gdnativeLibs":[]};
 		var engine = new Engine(GODOT_CONFIG);
